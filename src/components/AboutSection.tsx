@@ -16,7 +16,7 @@ const AboutSection = () => {
                 <img 
                   src="/about.jpg" 
                   alt="Dr. Wanjiru Kareithi Portrait" 
-                  className="w-full h-auto transform transition-all duration-1000 group-hover:scale-105 hover:scale-105"
+                  className="w-full h-auto transform transition-all duration-1000 group-hover:scale-105 hover:scale-105 max-h-[600px] object-cover object-center"
                 />
               </div>
             </RevealOnScroll>
@@ -24,63 +24,34 @@ const AboutSection = () => {
           {/* Text Column */}
           <div className="w-full md:w-3/5">
             <RevealOnScroll delay={200}>
-              {/* Academic Appointments */}
-              <h3 className="font-playfair text-2xl font-semibold mb-4 text-gray-800">Academic Appointments</h3>
-              <ul className="mb-6 ml-4 space-y-1 list-disc text-gray-700">
-                <li>
-                  <strong>Postdoctoral Scholar</strong>, Office of Access and Equity, PSU, 2023–Present
-                  <ul className="ml-4 list-disc text-gray-600 text-sm">
-                    <li>Leads research on systemic challenges for women in leadership (African/global higher ed).</li>
-                    <li>Investigates antiracist policies, develops frameworks for inclusive leadership in Arts & Architecture.</li>
-                    <li>Collaborates with WGSS and African Studies, authors research series on women academics' lived experiences.</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Affiliate Scholar</strong>, Women’s, Gender, and Sexuality Studies & African Studies Program, PSU, 2024–Present
-                  <ul className="ml-4 list-disc text-gray-600 text-sm">
-                    <li>Teaches gender studies, feminist legal theory, reproductive justice, and researches Black/African identities, human rights.</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Lecturer (on leave)</strong>, Faculty of Law, Catholic Univ. of Eastern Africa, 2021–Present<br />
-                  <span className="text-xs">Editor-in-Chief, CUEA Law Journal</span>
-                </li>
-                <li>
-                  <strong>Adjunct Lecturer</strong>, Faculty of Law, Riara Univ., 2021–2022
-                </li>
-              </ul>
-              {/* Education */}
-              <h3 className="font-playfair text-2xl font-semibold mb-4 text-gray-800">Education</h3>
-              <ul className="mb-6 ml-4 space-y-1 list-disc text-gray-700">
-                <li>
-                  <strong>Doctor of Laws (LLD)</strong>, University of Pretoria, South Africa, 2018<br />
-                  <span className="text-sm text-gray-600 font-normal">Dissertation: A historical-legal analysis of woman-to-woman marriage in Kenya</span>
-                </li>
-                <li>
-                  <strong>Postgraduate Diploma in Law (Juris Doctor)</strong>, Kenya School of Law, 2021
-                </li>
-                <li>
-                  <strong>Master of Laws (LLM), International Law</strong>, University of Bristol, UK, 2010
-                </li>
-                <li>
-                  <strong>Bachelor of Laws (LLB)</strong>, Catholic Univ. of Eastern Africa, Kenya, 2008
-                </li>
-                <li>
-                  <strong>Certificate, Senior Management</strong>, Kenya School of Government, 2023
-                </li>
-              </ul>
-              {/* Legal Standing */}
-              <h3 className="font-playfair text-2xl font-semibold mb-4 text-gray-800">Professional & Legal Standing</h3>
-              <ul className="mb-6 ml-4 space-y-1 list-disc text-gray-700">
-                <li><strong>Advocate of the High Court of Kenya</strong> (Admitted, Roll of Advocates): Good Standing</li>
-                <li>Member, Law Society of Kenya (LSK), American Bar Association (ABA), African Studies Association (ASA), NWSA, and others.</li>
-              </ul>
-              {/* Awards & Fellowships */}
-              <h3 className="font-playfair text-2xl font-semibold mb-4 text-gray-800">Awards & Fellowships</h3>
-              <ul className="mb-6 ml-4 space-y-1 list-disc text-gray-700">
-                <li>Fellow, Human Rights Implementation Centre, Univ. of Bristol (2008–2010)</li>
-                <li>Recipient, Gill Jacot Guillarmod Scholarship, Univ. of Pretoria (2017)</li>
-              </ul>
+              <div className="prose prose-lg max-w-none">
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Dr. Wanjiru Kareithi is a Postdoctoral Scholar in the Office of the Associate Dean of Access & Equity at Pennsylvania State University's College of Arts and Architecture, with courtesy affiliations in the African Studies Program and Women's, Gender, and Sexuality Studies Department.
+                </p>
+                
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Her research focuses on African women's leadership in higher education through decolonial feminist frameworks, emphasizing indigenous knowledge systems and institutional transformation. With over a decade of experience as a human rights lawyer, Dr. Kareithi has worked extensively across sub-Saharan Africa, Latin America, the United Kingdom, and globally.
+                </p>
+                
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  She addresses economic, social, and cultural issues affecting marginalized communities and has led initiatives on equality, non-discrimination, and gender-based approaches to human rights within platforms such as the African Commission on Human and Peoples' Rights and the United Nations Human Rights Council.
+                </p>
+                
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  As a legal scholar, she has published extensively on civil, political, economic, social, and group rights. Dr. Kareithi holds a Doctor of Laws (LLD) from the University of Pretoria, a Master of Laws (LLM) from the University of Bristol, and a Bachelor of Laws (LLB) from Kenya. She is also an Advocate of the High Court of Kenya.
+                </p>
+                
+                <a 
+                  href="/cv.pdf" 
+                  download 
+                  className="inline-flex items-center px-6 py-3 bg-pink-dark hover:bg-pink text-white font-medium rounded-md transition-colors duration-300"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download CV
+                </a>
+              </div>
             </RevealOnScroll>
           </div>
         </div>

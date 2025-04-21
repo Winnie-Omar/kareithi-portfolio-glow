@@ -16,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 43 65% 52%;
+    --primary: 326 100% 70%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 180 100% 25%;
+    --secondary: 310 90% 60%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
@@ -33,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 43 65% 52%;
+    --ring: 326 100% 70%;
 
     --radius: 0.5rem;
 
@@ -85,6 +85,16 @@
   
   .section-title::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-1/2 h-1 bg-gold;
+    @apply absolute bottom-0 left-0 w-1/2 h-1 bg-pink-dark;
+  }
+  
+  /* WhatsApp Chat Button */
+  .whatsapp-button {
+    @apply fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full p-4 shadow-lg transition-transform hover:scale-110;
+  }
+  
+  /* Social Media Icons */
+  .social-icon {
+    @apply text-pink hover:text-pink-dark transition-colors duration-300 mx-2;
   }
 }

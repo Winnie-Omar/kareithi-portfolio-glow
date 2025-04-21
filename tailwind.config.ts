@@ -63,10 +63,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Dr. Kareithi's portfolio
+				// Updated custom colors for Dr. Kareithi's portfolio
 				ivory: '#F8F7F3',
-				gold: '#D4AF37',
-				teal: '#008080',
+				gold: '#D946EF', // Changed to pink
+				teal: '#FF83C4', // Changed to lighter pink
+				pink: {
+					light: '#FFDEE2',
+					DEFAULT: '#FF83C4',
+					dark: '#D946EF'
+				}
 			},
 			fontFamily: {
 				'playfair': ['"Playfair Display"', 'serif'],

@@ -1,4 +1,6 @@
 
+import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
@@ -9,6 +11,21 @@ const Footer = () => {
           <div className="mb-4 md:mb-0">
             <p className="font-playfair text-lg">Dr. Wanjiru Kareithi</p>
             <p className="text-gray-400 text-sm">Postdoctoral Scholar | Advocate | Human Rights Lawyer</p>
+          </div>
+          
+          <div className="flex items-center space-x-4 mb-4 md:mb-0">
+            <a href="#" className="social-icon">
+              <Facebook size={24} />
+            </a>
+            <a href="#" className="social-icon">
+              <Instagram size={24} />
+            </a>
+            <a href="#" className="social-icon">
+              <Linkedin size={24} />
+            </a>
+            <a href="#" className="social-icon">
+              <Twitter size={24} />
+            </a>
           </div>
           
           <div className="text-gray-400 text-sm">

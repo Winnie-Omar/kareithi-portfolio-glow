@@ -62,7 +62,7 @@ const ContactSection = () => {
                   <p className="font-medium text-gray-800 mb-1">Email:</p>
                   <a 
                     href="mailto:mqk6198@psu.edu" 
-                    className="flex items-center text-teal hover:text-gold transition-colors"
+                    className="flex items-center text-pink hover:text-pink-dark transition-colors"
                   >
                     <Mail size={18} className="mr-2" />
                     mqk6198@psu.edu
@@ -78,15 +78,9 @@ const ContactSection = () => {
                 </div>
                 <div className="pt-4 border-t border-gray-200">
                   <a 
-                    href="#" 
-                    className="flex items-center bg-gold hover:bg-gold/90 text-white py-2 px-4 rounded-md transition-colors w-full justify-center"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      toast({
-                        title: "Coming Soon",
-                        description: "The CV download will be available soon.",
-                      });
-                    }}
+                    href="/cv.pdf" 
+                    download
+                    className="flex items-center bg-pink-dark hover:bg-pink text-white py-2 px-4 rounded-md transition-colors w-full justify-center"
                   >
                     <Download size={18} className="mr-2" />
                     Download CV
@@ -102,7 +96,7 @@ const ContactSection = () => {
                     href="https://scholar.google.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block text-teal hover:text-gold transition-colors"
+                    className="block text-pink hover:text-pink-dark transition-colors"
                   >
                     Google Scholar
                   </a>
@@ -110,7 +104,7 @@ const ContactSection = () => {
                     href="https://www.researchgate.net" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block text-teal hover:text-gold transition-colors"
+                    className="block text-pink hover:text-pink-dark transition-colors"
                   >
                     ResearchGate
                   </a>
@@ -118,7 +112,7 @@ const ContactSection = () => {
                     href="https://orcid.org" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block text-teal hover:text-gold transition-colors"
+                    className="block text-pink hover:text-pink-dark transition-colors"
                   >
                     ORCID
                   </a>
@@ -177,7 +171,7 @@ const ContactSection = () => {
                     <div>
                       <Button 
                         type="submit" 
-                        className="w-full bg-teal hover:bg-teal/90 text-white transition-colors"
+                        className="w-full bg-pink-dark hover:bg-pink text-white transition-colors"
                       >
                         Send Message
                       </Button>

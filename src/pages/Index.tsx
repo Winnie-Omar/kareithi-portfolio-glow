@@ -7,6 +7,7 @@ import ResearchSection from '@/components/ResearchSection';
 import AdvocacySection from '@/components/AdvocacySection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import WhatsAppChat from '@/components/WhatsAppChat';
 
 const Index = () => {
   // Initialize scroll reveal for sections
@@ -44,6 +45,7 @@ const Index = () => {
         <ContactSection />
       </main>
       
+      <WhatsAppChat />
       <Footer />
     </div>
   );
