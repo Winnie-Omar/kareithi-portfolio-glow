@@ -6,17 +6,17 @@ const AboutSection = () => {
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <RevealOnScroll>
-          <h2 className="section-title">About Dr. Kareithi</h2>
+          <h2 className="section-title text-pink-dark">About Me</h2>
         </RevealOnScroll>
         <div className="flex flex-col md:flex-row gap-12 mt-12">
           {/* Image Column */}
-          <div className="w-full md:w-2/5">
+          <div className="w-full md:w-2/5 flex justify-center">
             <RevealOnScroll>
-              <div className="relative overflow-hidden rounded-lg shadow-lg group">
+              <div className="relative overflow-hidden rounded-lg shadow-lg group max-w-xs mx-auto">
                 <img 
                   src="/about.jpg" 
                   alt="Dr. Wanjiru Kareithi Portrait" 
-                  className="w-full h-auto transform transition-all duration-1000 group-hover:scale-105 hover:scale-105 max-h-[600px] object-cover object-center"
+                  className="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover group-hover:scale-105 hover:scale-105 transition-transform duration-700 border-4 border-pink-dark shadow-lg"
                 />
               </div>
             </RevealOnScroll>
@@ -26,21 +26,17 @@ const AboutSection = () => {
             <RevealOnScroll delay={200}>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  Dr. Wanjiru Kareithi is a Postdoctoral Scholar in the Office of the Associate Dean of Access & Equity at Pennsylvania State University's College of Arts and Architecture, with courtesy affiliations in the African Studies Program and Women's, Gender, and Sexuality Studies Department.
+                  I'm a Postdoctoral Scholar in the Office of the Associate Dean of Access & Equity at Penn State’s College of Arts and Architecture, with courtesy affiliations in African Studies and Women’s, Gender, and Sexuality Studies.
                 </p>
-                
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  Her research focuses on African women's leadership in higher education through decolonial feminist frameworks, emphasizing indigenous knowledge systems and institutional transformation. With over a decade of experience as a human rights lawyer, Dr. Kareithi has worked extensively across sub-Saharan Africa, Latin America, the United Kingdom, and globally.
+                  My research centers on African women’s leadership in higher education through decolonial feminist and indigenous lenses. Over my career as a human rights lawyer, I’ve worked across sub-Saharan Africa, Latin America, and beyond to advance equality and institutional transformation for marginalized communities.
                 </p>
-                
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  She addresses economic, social, and cultural issues affecting marginalized communities and has led initiatives on equality, non-discrimination, and gender-based approaches to human rights within platforms such as the African Commission on Human and Peoples' Rights and the United Nations Human Rights Council.
+                  I have led programs within organizations such as the African Commission on Human and Peoples’ Rights and the UN Human Rights Council, championing gender-based and non-discrimination approaches in law and policy.
                 </p>
-                
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  As a legal scholar, she has published extensively on civil, political, economic, social, and group rights. Dr. Kareithi holds a Doctor of Laws (LLD) from the University of Pretoria, a Master of Laws (LLM) from the University of Bristol, and a Bachelor of Laws (LLB) from Kenya. She is also an Advocate of the High Court of Kenya.
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  As a legal scholar, I’m proud to have published research on rights at every level—civil, social, political, and economic. I hold a Doctor of Laws (LLD) from the University of Pretoria, an LLM from the University of Bristol, and an LLB from Kenya. I’m also an Advocate of the High Court of Kenya.
                 </p>
-                
                 <a 
                   href="/cv.pdf" 
                   download 
