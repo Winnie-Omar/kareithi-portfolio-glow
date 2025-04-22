@@ -1,6 +1,6 @@
 
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, Whatsapp } from "lucide-react";
+import { MessageCircle, MessageSquare } from "lucide-react";
 
 const quickQuestions = [
   { 
@@ -76,7 +76,7 @@ const WhatsAppBot = () => {
         >
           {/* WhatsApp style header */}
           <div className="bg-pink-dark text-white rounded-t-2xl px-4 py-3 flex items-center gap-2">
-            <Whatsapp size={22} className="text-green-300" />
+            <MessageSquare size={22} className="text-green-300" />
             <span className="font-semibold text-base">Chat with Me</span>
           </div>
           <div className="p-4 flex-1">
