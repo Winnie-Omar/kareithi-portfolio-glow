@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Download } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import RevealOnScroll from './RevealOnScroll';
 
@@ -69,22 +69,18 @@ const ContactSection = () => {
                   </a>
                 </div>
                 <div className="mb-6">
+                  <p className="font-medium text-gray-800 mb-1">Phone:</p>
+                  <p className="text-gray-700 text-sm">
+                    5822030835
+                  </p>
+                </div>
+                <div className="mb-6">
                   <p className="font-medium text-gray-800 mb-1">Affiliations:</p>
                   <ul className="ml-4 list-disc text-gray-700 text-sm">
                     <li>Law Society of Kenya (LSK)</li>
                     <li>American Bar Association (ABA)</li>
                     <li>African Studies Association (ASA)</li>
                   </ul>
-                </div>
-                <div className="pt-4 border-t border-gray-200">
-                  <a 
-                    href="/cv.pdf" 
-                    download
-                    className="flex items-center bg-pink-dark hover:bg-pink text-white py-2 px-4 rounded-md transition-colors w-full justify-center"
-                  >
-                    <Download size={18} className="mr-2" />
-                    Download CV
-                  </a>
                 </div>
               </div>
             </RevealOnScroll>
