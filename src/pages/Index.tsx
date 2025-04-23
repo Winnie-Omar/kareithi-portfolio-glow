@@ -5,14 +5,12 @@ import HomeSection from '@/components/HomeSection';
 import AboutSection from '@/components/AboutSection';
 import PortfolioSection from '@/components/PortfolioSection';
 import ResearchSection from '@/components/ResearchSection';
-import AdvocacySection from '@/components/AdvocacySection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import WhatsAppBot from '@/components/WhatsAppBot';
 import WelcomeModal from '@/components/WelcomeModal';
 
 const Index = () => {
-  // Initialize scroll reveal for sections
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal');
     
@@ -28,10 +26,7 @@ const Index = () => {
     };
     
     window.addEventListener('scroll', checkScroll);
-    
-    // Trigger once on load
     checkScroll();
-    
     return () => window.removeEventListener('scroll', checkScroll);
   }, []);
   
@@ -44,7 +39,6 @@ const Index = () => {
         <AboutSection />
         <PortfolioSection />
         <ResearchSection />
-        <AdvocacySection />
         <ContactSection />
       </main>
       <WhatsAppBot />

@@ -4,47 +4,43 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 
-// Card Data
 const portfolioCards = [
   {
     title: "Advocacy & Social Justice",
-    summary:
-      "I bring together law, policy, and activism—working to remove barriers and create real opportunities for those often left out.",
+    summary: "Strengthening justice systems, protecting human dignity, and building responsive legal and social structures.",
     details: {
-      description:
-        "My advocacy connects legal frameworks with on-the-ground activism. I focus on advancing human rights, equity for women, and anti-racist strategies. Through policy reform and coalition building, I aim to open doors for marginalized individuals by reshaping laws and strengthening community capacities.",
+      description: "This portfolio area highlights a commitment to strengthening justice systems, protecting human dignity, and supporting responsive legal and social structures. Through strategic policy engagement and legal expertise, this work contributes to reshaping systems and expanding access for communities often excluded from decision-making spaces.",
+      coreFocus: "Connects legal frameworks with community-based strategies to promote access to rights and strengthen institutional accountability. Efforts span legal reform, policy engagement, and coalition building in support of sustainable change.",
       takeaways: [
-        "Expertise in global human rights advocacy",
-        "Champion for anti-racist and gender equity initiatives",
-        "Skilled in legal reform and community capacity building",
+        "Experienced in national and international human rights law and advocacy",
+        "Focused on legal strategies that advance protections for women and underrepresented groups",
+        "Skilled in coalition building, policy development, and strengthening community-based legal capacities"
       ],
     },
   },
   {
     title: "Research & Scholarship",
-    summary:
-      "Through my research, I delve into African leadership models and the practical adoption of equity-driven policies in global settings.",
+    summary: "Exploring leadership, governance, and knowledge production through culturally grounded and interdisciplinary lenses.",
     details: {
-      description:
-        "My scholarly work explores leadership practices rooted in African and decolonial perspectives. I collaborate across disciplines to conduct research, shape policy, and publish insights that bridge cultural and social divides. My goal is to help build more inclusive, thoughtful, and just societies.",
+      description: "This portfolio investigates leadership practices shaped by African and decolonial thought, with a particular emphasis on the experiences and contributions of women in leadership. This work engages with institutional structures, cultural narratives, and public policy to inform more responsive approaches to leadership and knowledge-building.",
+      coreFocus: "A significant strand of this portfolio examines the systemic challenges facing women leaders and the strategies they adopt within academic, legal, and policy environments. Through cross-disciplinary collaboration, policy engagement, and scholarly writing, this work bridges intellectual traditions and contributes to practical reform.",
       takeaways: [
-        "Deep knowledge of transformational leadership",
-        "Experience in policy analysis and research partnerships",
-        "Committed to amplifying marginalized knowledge systems",
+        "Expertise in transformational and values-based leadership models",
+        "Experienced in policy research, institutional analysis, and academic collaboration",
+        "Committed to advancing underrepresented knowledge traditions through research and writing"
       ],
     },
   },
   {
     title: "Teaching & Public Engagement",
-    summary:
-      "I see education as the foundation for change—nurturing thoughtful dialogue and inspiring courageous engagement with social issues.",
+    summary: "Centering education as a transformative space for dialogue, critical reflection, and ethical engagement across global contexts.",
     details: {
-      description:
-        "I teach, mentor, and lead workshops that open up space for discussion on law, diversity, and social justice. By designing inclusive programming and fostering active learning, I seek to empower individuals and communities to be agents of change.",
+      description: "This portfolio area emphasizes a teaching philosophy rooted in dialogic, student-centered, and inquiry-driven models. Learning is approached as a collaborative process that values reflection, responsiveness, and the co-creation of knowledge.",
+      coreFocus: "Prioritizes pedagogical models that bridge theory with lived experience, inviting students to engage complex social questions through interdisciplinary and ethical lenses. Emphasis is placed on fostering inclusive learning environments where discussion, active participation, and reflective analysis support deeper understanding.",
       takeaways: [
-        "Track record in curriculum design and public speaking",
-        "Mentorship for emerging leaders",
-        "Focus on actionable, community-centered learning",
+        "Grounded in dialogic, student-centered teaching methods",
+        "Experienced in designing reflective and participatory learning environments",
+        "Committed to pedagogical models that connect theory, practice, and public discourse"
       ],
     },
   },
@@ -63,8 +59,9 @@ const PortfolioSection = () => {
           {portfolioCards.map((card, idx) => (
             <RevealOnScroll delay={100 + idx * 100} key={card.title}>
               <Card
-                className="bg-white border-pink/20 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:border-pink hover:bg-pink-light group"
+                className="bg-white border-pink/20 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:border-pink hover:bg-pink-light group cursor-pointer"
                 style={{ minHeight: "360px" }}
+                onClick={() => setOpenIdx(idx)}
               >
                 <CardHeader className="pb-2">
                   <CardTitle className="font-playfair text-2xl font-bold text-pink-dark">
@@ -72,29 +69,32 @@ const PortfolioSection = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700 mt-4 leading-relaxed mb-6">
+                  <p className="text-gray-700 mt-4 leading-relaxed text-lg mb-6">
                     {card.summary}
                   </p>
                   <button
-                    className="px-5 py-2 bg-pink-dark group-hover:bg-pink text-white font-medium rounded transition-colors hover:shadow-xl"
-                    onClick={() => setOpenIdx(idx)}
+                    className="px-5 py-2 bg-pink-dark group-hover:bg-pink text-white font-medium transition-colors hover:shadow-xl"
                   >
                     Learn More
                   </button>
                 </CardContent>
                 {openIdx === idx && (
-                  <Dialog open={true} onOpenChange={(open) => !open && setOpenIdx(null)}>
-                    <DialogContent>
+                  <Dialog open={true} onOpenChange={() => setOpenIdx(null)}>
+                    <DialogContent className="max-w-3xl">
                       <DialogHeader>
-                        <DialogTitle className="font-playfair text-xl text-pink-dark">{card.title}</DialogTitle>
+                        <DialogTitle className="font-playfair text-2xl text-pink-dark">{card.title}</DialogTitle>
                       </DialogHeader>
-                      <div className="mt-3 text-gray-800">
-                        <p className="mb-4">{card.details.description}</p>
+                      <div className="mt-6 text-gray-800 space-y-6">
                         <div>
-                          <h4 className="font-bold mb-2 text-pink-dark">Key Takeaways:</h4>
-                          <ul className="ml-4 list-disc">
-                            {card.details.takeaways.map((tk) => (
-                              <li key={tk}>{tk}</li>
+                          <p className="text-lg mb-4">{card.details.description}</p>
+                          <h4 className="font-bold text-lg text-pink-dark mb-2">Core Focus</h4>
+                          <p className="text-lg mb-6">{card.details.coreFocus}</p>
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-lg text-pink-dark mb-3">Key Takeaways:</h4>
+                          <ul className="ml-4 list-disc space-y-2">
+                            {card.details.takeaways.map((tk, index) => (
+                              <li key={index} className="text-lg">{tk}</li>
                             ))}
                           </ul>
                         </div>

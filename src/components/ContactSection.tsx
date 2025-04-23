@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -51,7 +50,7 @@ const ContactSection = () => {
                 <h3 className="font-playfair text-xl font-semibold mb-4">Contact Information</h3>
                 <div className="mb-6">
                   <p className="font-medium text-gray-800 mb-1">Address:</p>
-                  <p className="text-gray-700 text-sm">
+                  <p className="text-gray-700 text-lg">
                     College of Arts &amp; Architecture,<br />
                     The Pennsylvania State University<br />
                     124 Borland Building<br />
@@ -62,7 +61,7 @@ const ContactSection = () => {
                   <p className="font-medium text-gray-800 mb-1">Email:</p>
                   <a 
                     href="mailto:mqk6198@psu.edu" 
-                    className="flex items-center text-pink hover:text-pink-dark transition-colors"
+                    className="flex items-center text-pink hover:text-pink-dark transition-colors text-lg"
                   >
                     <Mail size={18} className="mr-2" />
                     mqk6198@psu.edu
@@ -70,48 +69,9 @@ const ContactSection = () => {
                 </div>
                 <div className="mb-6">
                   <p className="font-medium text-gray-800 mb-1">Phone:</p>
-                  <p className="text-gray-700 text-sm">
+                  <p className="text-gray-700 text-lg">
                     5822030835
                   </p>
-                </div>
-                <div className="mb-6">
-                  <p className="font-medium text-gray-800 mb-1">Affiliations:</p>
-                  <ul className="ml-4 list-disc text-gray-700 text-sm">
-                    <li>Law Society of Kenya (LSK)</li>
-                    <li>American Bar Association (ABA)</li>
-                    <li>African Studies Association (ASA)</li>
-                  </ul>
-                </div>
-              </div>
-            </RevealOnScroll>
-            <RevealOnScroll delay={300}>
-              <div className="mt-6 bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-playfair text-xl font-semibold mb-4">Academic &amp; Professional Profiles</h3>
-                <div className="space-y-3">
-                  <a 
-                    href="https://scholar.google.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block text-pink hover:text-pink-dark transition-colors"
-                  >
-                    Google Scholar
-                  </a>
-                  <a 
-                    href="https://www.researchgate.net" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block text-pink hover:text-pink-dark transition-colors"
-                  >
-                    ResearchGate
-                  </a>
-                  <a 
-                    href="https://orcid.org" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block text-pink hover:text-pink-dark transition-colors"
-                  >
-                    ORCID
-                  </a>
                 </div>
               </div>
             </RevealOnScroll>
