@@ -2,10 +2,9 @@
 import RevealOnScroll from './RevealOnScroll';
 import { useRef, useEffect, useState } from "react";
 
-// Fast animated typewriter effect for subtitle
 const roles = ["Legal Scholar", "Advocate", "Educator"];
-const typeSpeed = 100; // Slowed down the speed
-const pauseBetweenRoles = 1000; // Added more pause between roles
+const typeSpeed = 150; // Slightly slower type speed
+const pauseBetweenRoles = 1500; // Longer pause between roles
 
 const HomeSection = () => {
   const [index, setIndex] = useState(0);
@@ -40,7 +39,7 @@ const HomeSection = () => {
   return (
     <section
       id="home"
-      className="h-screen flex items-center relative bg-gradient-to-br from-[#1A1F2C] via-[#FFE29F] to-[#FFDEE2] overflow-hidden"
+      className="h-screen flex items-center relative bg-gradient-to-br from-[#FFE29F] via-[#FFA99F] to-[#FF719A] overflow-hidden"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
@@ -50,9 +49,8 @@ const HomeSection = () => {
                 <img 
                   src="/home.jpg" 
                   alt="Dr. Wanjiru Kareithi"
-                  className="w-[400px] h-[500px] md:w-[500px] md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-[500px] h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-pink/10 group-hover:bg-transparent transition-colors duration-500"></div>
               </div>
             </RevealOnScroll>
           </div>
@@ -72,13 +70,13 @@ const HomeSection = () => {
             </RevealOnScroll>
             <RevealOnScroll delay={600}>
               <p className="font-inter text-lg md:text-xl text-gray-900 mb-4 leading-relaxed">
-                I'm Dr. Wanjiru Kareithi, a human rights scholar, legal advocate, and community builder committed to advancing a grounded vision of justice and leadership.
+                A human rights scholar, legal advocate, and community builder committed to advancing a grounded vision of justice and leadership.
               </p>
               <p className="font-inter text-lg text-gray-800 mb-4 leading-relaxed">
-                Rooted in my identity, heritage, and a deep commitment to service, I bring together law, education, and community advocacy to help shape systems built on partnership, accountability, and mutual respect. I believe meaningful change begins with honest dialogue and grows through shared purpose and collective responsibility.
+                Rooted in identity, heritage, and a deep commitment to service, I bring together law, education, and community advocacy to shape systems built on partnership, accountability, and mutual respect.
               </p>
               <p className="font-inter text-lg text-gray-800 mb-8 leading-relaxed">
-                My approach to leadership is guided by deeply held values—empathy, integrity, and the enduring strength of community. In every space I engage, whether academic, legal, or civic, I strive to uplift underrepresented voices and nurture leadership that serves and empowers.
+                My leadership is guided by values of empathy, integrity, and the enduring strength of community, striving to uplift underrepresented voices and nurture transformative leadership.
               </p>
               <div>
                 <button

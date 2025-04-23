@@ -25,7 +25,7 @@ const AboutSection = () => {
                 <img 
                   src="/about.jpg" 
                   alt="Portrait of Dr. Wanjiru Kareithi" 
-                  className="w-[400px] h-[500px] md:w-[500px] md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-[500px] h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             </RevealOnScroll>
@@ -40,7 +40,13 @@ const AboutSection = () => {
                   With more than twelve years of experience, she has contributed to initiatives across academic, legal, and civil society sectors, supporting systems change and public interest innovation. Her teaching and program design emphasizes leadership development, critical inquiry, and collaborative problem-solving.
                 </p>
                 <p className="text-gray-800 mb-4 leading-relaxed text-lg">
-                  Based in the United States, Dr. Kareithi engages in interdisciplinary work that integrates legal research, education, and advocacy, drawing on leadership philosophies and community values that inform her commitment to social transformation. Her work reflects a breadth of experience in diverse cultural and institutional contexts, with a focus on justice-driven projects and cross-sector collaboration.
+                  Based in the United States, Dr. Kareithi engages in interdisciplinary work that integrates legal research, education, and advocacy, drawing on leadership philosophies and community values that inform her commitment to social transformation.
+                </p>
+                <p className="text-gray-800 mb-4 leading-relaxed text-lg">
+                  Her scholarship spans peer-reviewed journals, policy platforms, and public writing, addressing reproductive justice, international law, feminist legal theory, and social equity. She regularly contributes to academic and practitioner conversations through public speaking, writing, and facilitation.
+                </p>
+                <p className="text-gray-800 mb-4 leading-relaxed text-lg">
+                  She has held advisory and expert roles across a range of advocacy and policy environments, with advanced legal training and professional licensure. An active member of several academic and legal associations, her research and practice are grounded in values-driven leadership and committed to fostering dialogue, reflection, and ethical engagement.
                 </p>
                 <div>
                   <button
