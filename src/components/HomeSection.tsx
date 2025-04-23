@@ -27,14 +27,14 @@ const HomeSection = () => {
           {/* Image Column */}
           <div className="w-full md:w-1/2 mb-8 md:mb-0 flex justify-center">
             <RevealOnScroll>
-              <div className="relative overflow-hidden rounded-lg shadow-xl group max-w-xs md:max-w-sm mx-auto">
+              <div className="relative overflow-hidden shadow-xl group max-w-xs md:max-w-sm mx-auto">
                 <img 
                   src="/home.jpg" 
                   alt="Dr. Wanjiru Kareithi"
-                  className="w-56 h-56 md:w-72 md:h-72 object-cover transition-transform duration-700 group-hover:scale-105 hover:scale-105 border-4 border-pink-dark shadow-lg" // removed rounded-full
-                  style={{ borderRadius: "1.25rem" }} // subtle rounded corners, not full circle
+                  className="w-56 h-56 md:w-72 md:h-72 object-cover transition-transform duration-700 group-hover:scale-105 hover:scale-105 border-4 border-pink-dark shadow-lg" 
+                  style={{ borderRadius: "0.5rem" }} // subtle rounded corners, not circle
                 />
-                <div className="absolute inset-0 bg-pink/20 group-hover:bg-transparent transition-colors duration-500 rounded-lg"></div>
+                <div className="absolute inset-0 bg-pink/20 group-hover:bg-transparent transition-colors duration-500"></div>
               </div>
             </RevealOnScroll>
           </div>

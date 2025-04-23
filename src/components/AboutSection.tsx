@@ -12,12 +12,12 @@ const AboutSection = () => {
           {/* Image Column */}
           <div className="w-full md:w-2/5 flex justify-center">
             <RevealOnScroll>
-              <div className="relative overflow-hidden rounded-lg shadow-lg group max-w-xs mx-auto">
+              <div className="relative overflow-hidden shadow-lg group max-w-xs mx-auto">
                 <img 
                   src="/about.jpg" 
                   alt="Portrait of Dr. Wanjiru Kareithi" 
                   className="w-56 h-56 md:w-72 md:h-72 object-cover group-hover:scale-105 hover:scale-105 transition-transform duration-700 border-4 border-pink-dark shadow-lg"
-                  style={{ borderRadius: "1.25rem" }} // subtle rounded corners, not circle
+                  style={{ borderRadius: "0.5rem" }} // subtle rounded corners, not circle
                 />
               </div>
             </RevealOnScroll>
@@ -27,16 +27,16 @@ const AboutSection = () => {
             <RevealOnScroll delay={200}>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  I'm a Postdoctoral Scholar in the Office of the Associate Dean of Access & Equity at Penn State’s College of Arts and Architecture, with courtesy affiliations in African Studies and Women's, Gender, and Sexuality Studies.
+                  I'm a Postdoctoral Scholar in the Office of the Associate Dean of Access & Equity at Penn State's College of Arts and Architecture, with courtesy affiliations in African Studies and Women's, Gender, and Sexuality Studies.
                 </p>
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  My research explores African women's leadership in higher education. I use decolonial feminist and indigenous frameworks, and I'm deeply invested in how knowledge systems can transform institutions. This is more than my profession—it’s my passion.
+                  My research explores African women's leadership in higher education. I use decolonial feminist and indigenous frameworks, and I'm deeply invested in how knowledge systems can transform institutions. This is more than my profession—it's my passion.
                 </p>
                 <p className="text-gray-700 mb-4 leading-relaxed">
                   I have over a decade of experience as a human rights lawyer, working in sub-Saharan Africa, Latin America, the UK, and around the world. My work centers on building equality, community, and dignity for those at the margins. Leadership, for me, is about partnership and impact—grounded in everyday experiences, including motherhood.
                 </p>
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  My writing and research focus on civil, political, economic, social, and group rights, always with a view to creating more just and inclusive spaces for all. Let’s connect and grow this work together.
+                  My writing and research focus on civil, political, economic, social, and group rights, always with a view to creating more just and inclusive spaces for all. Let's connect and grow this work together.
                 </p>
                 <a 
                   href="/cv.pdf" 
@@ -52,71 +52,58 @@ const AboutSection = () => {
             </RevealOnScroll>
           </div>
         </div>
+        
+        {/* Pillars of Purpose Section */}
+        <div className="mt-20">
+          <RevealOnScroll>
+            <h3 className="text-2xl font-playfair font-bold text-pink-dark mb-8">Pillars of Purpose</h3>
+          </RevealOnScroll>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
+            {/* Justice */}
+            <RevealOnScroll delay={100}>
+              <div className="bg-white p-6 rounded shadow-md border-l-4 border-pink-dark h-full">
+                <h4 className="font-playfair text-xl font-semibold mb-3 text-pink-dark">Justice</h4>
+                <p className="text-gray-700">Advancing fair and inclusive systems through legal scholarship, research, teaching, and advocacy.</p>
+              </div>
+            </RevealOnScroll>
+            
+            {/* Empowerment */}
+            <RevealOnScroll delay={200}>
+              <div className="bg-white p-6 rounded shadow-md border-l-4 border-pink-dark h-full">
+                <h4 className="font-playfair text-xl font-semibold mb-3 text-pink-dark">Empowerment</h4>
+                <p className="text-gray-700">Educating, mentoring, and inspiring future leaders while creating spaces for diverse voices to thrive.</p>
+              </div>
+            </RevealOnScroll>
+            
+            {/* Community */}
+            <RevealOnScroll delay={300}>
+              <div className="bg-white p-6 rounded shadow-md border-l-4 border-pink-dark h-full">
+                <h4 className="font-playfair text-xl font-semibold mb-3 text-pink-dark">Community</h4>
+                <p className="text-gray-700">Building meaningful partnerships that foster connection, learning, and collective growth within and beyond academia.</p>
+              </div>
+            </RevealOnScroll>
+            
+            {/* Global Insight */}
+            <RevealOnScroll delay={400}>
+              <div className="bg-white p-6 rounded shadow-md border-l-4 border-pink-dark h-full">
+                <h4 className="font-playfair text-xl font-semibold mb-3 text-pink-dark">Global Insight</h4>
+                <p className="text-gray-700">Bridging local and global perspectives through research and dialogue to shape transformative leadership and critical thought.</p>
+              </div>
+            </RevealOnScroll>
+            
+            {/* Authenticity */}
+            <RevealOnScroll delay={500}>
+              <div className="bg-white p-6 rounded shadow-md border-l-4 border-pink-dark h-full">
+                <h4 className="font-playfair text-xl font-semibold mb-3 text-pink-dark">Authenticity</h4>
+                <p className="text-gray-700">Rooted in lived experiences, including motherhood, and guided by a commitment to truth, empathy, and integrity in all aspects of my work.</p>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
 export default AboutSection;
-</lov_write>
-
-**3. `src/pages/Index.tsx`**:
-- Add professional African-inspired gradient for main background.
-- Make sure the overall page keeps a serious but warm color theme with pink accents for community and partnership.
-
-<lov-write file_path="src/pages/Index.tsx">
-import { useEffect } from 'react';
-import Navigation from '@/components/Navigation';
-import HomeSection from '@/components/HomeSection';
-import AboutSection from '@/components/AboutSection';
-import ResearchSection from '@/components/ResearchSection';
-import AdvocacySection from '@/components/AdvocacySection';
-import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
-import WhatsAppBot from '@/components/WhatsAppBot';
-import WelcomeModal from '@/components/WelcomeModal';
-
-const Index = () => {
-  // Initialize scroll reveal for sections
-  useEffect(() => {
-    const revealElements = document.querySelectorAll('.reveal');
-    
-    const checkScroll = () => {
-      revealElements.forEach((element) => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-          element.classList.add('active');
-        }
-      });
-    };
-    
-    window.addEventListener('scroll', checkScroll);
-    checkScroll();
-    return () => window.removeEventListener('scroll', checkScroll);
-  }, []);
-  
-  return (
-    <div
-      className="min-h-screen"
-      style={{
-        background: 'linear-gradient(135deg, #1A1F2C 0%, #FFE29F 60%, #FFDEE2 100%)'
-      }}
-    >
-      <WelcomeModal />
-      <Navigation />
-      <main>
-        <HomeSection />
-        <AboutSection />
-        <ResearchSection />
-        <AdvocacySection />
-        <ContactSection />
-      </main>
-      <WhatsAppBot />
-      <Footer />
-    </div>
-  );
-};
-
-export default Index;
