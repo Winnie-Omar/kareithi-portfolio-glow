@@ -15,8 +15,9 @@ const AboutSection = () => {
               <div className="relative overflow-hidden rounded-lg shadow-lg group max-w-xs mx-auto">
                 <img 
                   src="/about.jpg" 
-                  alt="Dr. Wanjiru Kareithi Portrait" 
-                  className="w-56 h-56 md:w-72 md:h-72 rounded-full object-cover group-hover:scale-105 hover:scale-105 transition-transform duration-700 border-4 border-pink-dark shadow-lg"
+                  alt="Portrait of Dr. Wanjiru Kareithi" 
+                  className="w-56 h-56 md:w-72 md:h-72 object-cover group-hover:scale-105 hover:scale-105 transition-transform duration-700 border-4 border-pink-dark shadow-lg"
+                  style={{ borderRadius: "1.25rem" }} // subtle rounded corners, not circle
                 />
               </div>
             </RevealOnScroll>
@@ -26,16 +27,16 @@ const AboutSection = () => {
             <RevealOnScroll delay={200}>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  I'm a Postdoctoral Scholar in the Office of the Associate Dean of Access & Equity at Penn State’s College of Arts and Architecture, with courtesy affiliations in African Studies and Women’s, Gender, and Sexuality Studies.
+                  I'm a Postdoctoral Scholar in the Office of the Associate Dean of Access & Equity at Penn State’s College of Arts and Architecture, with courtesy affiliations in African Studies and Women's, Gender, and Sexuality Studies.
                 </p>
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  My research centers on African women’s leadership in higher education through decolonial feminist and indigenous lenses. Over my career as a human rights lawyer, I’ve worked across sub-Saharan Africa, Latin America, and beyond to advance equality and institutional transformation for marginalized communities.
+                  My research explores African women's leadership in higher education. I use decolonial feminist and indigenous frameworks, and I'm deeply invested in how knowledge systems can transform institutions. This is more than my profession—it’s my passion.
                 </p>
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  I have led programs within organizations such as the African Commission on Human and Peoples’ Rights and the UN Human Rights Council, championing gender-based and non-discrimination approaches in law and policy.
+                  I have over a decade of experience as a human rights lawyer, working in sub-Saharan Africa, Latin America, the UK, and around the world. My work centers on building equality, community, and dignity for those at the margins. Leadership, for me, is about partnership and impact—grounded in everyday experiences, including motherhood.
                 </p>
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  As a legal scholar, I’m proud to have published research on rights at every level—civil, social, political, and economic. I hold a Doctor of Laws (LLD) from the University of Pretoria, an LLM from the University of Bristol, and an LLB from Kenya. I’m also an Advocate of the High Court of Kenya.
+                  My writing and research focus on civil, political, economic, social, and group rights, always with a view to creating more just and inclusive spaces for all. Let’s connect and grow this work together.
                 </p>
                 <a 
                   href="/cv.pdf" 
@@ -57,3 +58,65 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+</lov_write>
+
+**3. `src/pages/Index.tsx`**:
+- Add professional African-inspired gradient for main background.
+- Make sure the overall page keeps a serious but warm color theme with pink accents for community and partnership.
+
+<lov-write file_path="src/pages/Index.tsx">
+import { useEffect } from 'react';
+import Navigation from '@/components/Navigation';
+import HomeSection from '@/components/HomeSection';
+import AboutSection from '@/components/AboutSection';
+import ResearchSection from '@/components/ResearchSection';
+import AdvocacySection from '@/components/AdvocacySection';
+import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
+import WhatsAppBot from '@/components/WhatsAppBot';
+import WelcomeModal from '@/components/WelcomeModal';
+
+const Index = () => {
+  // Initialize scroll reveal for sections
+  useEffect(() => {
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const checkScroll = () => {
+      revealElements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('active');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', checkScroll);
+    checkScroll();
+    return () => window.removeEventListener('scroll', checkScroll);
+  }, []);
+  
+  return (
+    <div
+      className="min-h-screen"
+      style={{
+        background: 'linear-gradient(135deg, #1A1F2C 0%, #FFE29F 60%, #FFDEE2 100%)'
+      }}
+    >
+      <WelcomeModal />
+      <Navigation />
+      <main>
+        <HomeSection />
+        <AboutSection />
+        <ResearchSection />
+        <AdvocacySection />
+        <ContactSection />
+      </main>
+      <WhatsAppBot />
+      <Footer />
+    </div>
+  );
+};
+
+export default Index;
