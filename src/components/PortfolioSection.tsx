@@ -1,7 +1,8 @@
-import RevealOnScroll from "./RevealOnScroll";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
+import RevealOnScroll from './RevealOnScroll';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { useState } from 'react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
+import { Button } from './ui/button';
 
 const portfolioCards = [
   {
@@ -57,7 +58,7 @@ const PortfolioSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {portfolioCards.map((card, idx) => (
             <RevealOnScroll delay={100 + idx * 100} key={card.title}>
-              <Card className="bg-white/90 backdrop-blur-sm border-transparent transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group cursor-pointer" onClick={() => setOpenIdx(idx)}>
+              <Card className="bg-white/90 backdrop-blur-sm border-transparent transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group">
                 <CardHeader className="pb-2">
                   <CardTitle className="font-playfair text-2xl font-bold text-black">
                     {card.title}
@@ -67,6 +68,13 @@ const PortfolioSection = () => {
                   <p className="text-gray-700 mt-4 leading-relaxed text-lg mb-6">
                     {card.summary}
                   </p>
+                  <Button 
+                    variant="outline" 
+                    onClick={() => setOpenIdx(idx)}
+                    className="w-full"
+                  >
+                    View More
+                  </Button>
                 </CardContent>
                 {openIdx === idx && (
                   <Dialog open={true} onOpenChange={() => setOpenIdx(null)}>
@@ -89,12 +97,13 @@ const PortfolioSection = () => {
                           </ul>
                         </div>
                       </div>
-                      <button 
+                      <Button 
                         onClick={() => setOpenIdx(null)}
-                        className="mt-4 px-4 py-2 bg-gray-200 text-black rounded hover:bg-gray-300 transition-colors"
+                        className="mt-4"
+                        variant="outline"
                       >
                         Cancel
-                      </button>
+                      </Button>
                     </DialogContent>
                   </Dialog>
                 )}

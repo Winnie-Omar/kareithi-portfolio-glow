@@ -1,16 +1,6 @@
 import RevealOnScroll from './RevealOnScroll';
 
 const AboutSection = () => {
-  const scrollToPortfolio = () => {
-    const portfolioSection = document.getElementById('portfolio');
-    if (portfolioSection) {
-      window.scrollTo({
-        top: portfolioSection.offsetTop - 80,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
     <section id="about" className="py-20 page-gradient">
       <div className="container mx-auto px-4">
@@ -38,11 +28,7 @@ const AboutSection = () => {
                 <p className="content-text mb-4">
                   With more than twelve years of experience, she has contributed to initiatives across academic, legal, and civil society sectors, supporting systems change and public interest innovation. Her teaching and program design emphasizes leadership development, critical inquiry, and collaborative problem-solving.
                 </p>
-                <div className="section-banner">
-                  <p className="content-text font-medium text-pink-dark">
-                    Bridging Theory and Practice in Legal Education and Advocacy
-                  </p>
-                </div>
+                <h3 className="section-title text-black mb-6">Bridging Theory and Practice in Legal Education and Advocacy</h3>
                 <p className="content-text mb-4">
                   Based in the United States, Dr. Kareithi engages in interdisciplinary work that integrates legal research, education, and advocacy, drawing on leadership philosophies and community values that inform her commitment to social transformation.
                 </p>
@@ -52,18 +38,6 @@ const AboutSection = () => {
                 <p className="content-text mb-4">
                   She holds advanced legal training and professional licensure and is an active member of several academic and legal associations. Her research and practice are grounded in values-driven leadership, informed by lived experience, and committed to fostering dialogue, reflection, and ethical engagement in both institutional and community settings.
                 </p>
-                <div>
-                  <button
-                    className="inline-flex items-center px-6 py-3 bg-pink-dark hover:bg-pink text-white font-medium rounded-md transition-colors duration-300 mt-4"
-                    onClick={scrollToPortfolio}
-                    aria-label="See My Work"
-                  >
-                    See My Work
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                </div>
               </div>
             </RevealOnScroll>
           </div>
@@ -71,7 +45,7 @@ const AboutSection = () => {
         
         <div className="mt-20">
           <RevealOnScroll>
-            <h3 className="text-2xl font-playfair font-bold text-pink-dark mb-8">Pillars of Purpose</h3>
+            <h2 className="section-title text-black mb-8">Pillars of Purpose</h2>
           </RevealOnScroll>
           
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
