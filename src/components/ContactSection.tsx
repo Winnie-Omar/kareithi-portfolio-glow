@@ -37,7 +37,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-ivory">
+    <section id="contact" className="py-20 page-gradient">
       <div className="container mx-auto px-4">
         <RevealOnScroll>
           <h2 className="section-title">Get In Touch</h2>

@@ -104,4 +104,16 @@
   .social-icon {
     @apply text-pink hover:text-pink-dark transition-colors duration-300 mx-2;
   }
+  
+  .content-text {
+    @apply text-lg leading-relaxed text-gray-800;
+  }
+  
+  .page-gradient {
+    @apply bg-gradient-to-br from-[#FFE29F] via-[#FFA99F] to-[#FF719A];
+  }
+  
+  .section-banner {
+    @apply w-full py-6 bg-gradient-to-r from-black/10 via-black/5 to-transparent backdrop-blur-sm my-8;
+  }
 }

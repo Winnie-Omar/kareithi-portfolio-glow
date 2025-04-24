@@ -1,4 +1,3 @@
-
 import { ExternalLink } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
 
@@ -62,7 +61,7 @@ const ResearchSection = () => {
     }
   ];
   return (
-    <section id="research" className="py-20 bg-ivory">
+    <section id="research" className="py-20 page-gradient">
       <div className="container mx-auto px-4">
         <RevealOnScroll>
           <h2 className="section-title">Research &amp; Publications</h2>

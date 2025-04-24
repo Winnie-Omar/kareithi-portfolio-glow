@@ -1,4 +1,3 @@
-
 import RevealOnScroll from './RevealOnScroll';
 
 const AboutSection = () => {
@@ -13,7 +12,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 page-gradient">
       <div className="container mx-auto px-4">
         <RevealOnScroll>
           <h2 className="section-title text-pink-dark">About Me</h2>
@@ -32,21 +31,26 @@ const AboutSection = () => {
           </div>
           <div className="w-full md:w-3/5">
             <RevealOnScroll delay={200}>
-              <div className="prose prose-lg max-w-none font-inter">
-                <p className="text-gray-800 mb-4 leading-relaxed text-lg" style={{ fontFamily: 'Playfair Display, serif' }}>
+              <div className="prose prose-lg max-w-none">
+                <p className="content-text font-playfair mb-4">
                   Dr. Wanjiru Kareithi is an educator, researcher, and legal practitioner with expertise in law, policy, and community-centered partnerships.
                 </p>
-                <p className="text-gray-800 mb-4 leading-relaxed text-lg">
+                <p className="content-text mb-4">
                   With more than twelve years of experience, she has contributed to initiatives across academic, legal, and civil society sectors, supporting systems change and public interest innovation. Her teaching and program design emphasizes leadership development, critical inquiry, and collaborative problem-solving.
                 </p>
-                <p className="text-gray-800 mb-4 leading-relaxed text-lg">
+                <div className="section-banner">
+                  <p className="content-text font-medium text-pink-dark">
+                    Bridging Theory and Practice in Legal Education and Advocacy
+                  </p>
+                </div>
+                <p className="content-text mb-4">
                   Based in the United States, Dr. Kareithi engages in interdisciplinary work that integrates legal research, education, and advocacy, drawing on leadership philosophies and community values that inform her commitment to social transformation.
                 </p>
-                <p className="text-gray-800 mb-4 leading-relaxed text-lg">
-                  Her scholarship spans peer-reviewed journals, policy platforms, and public writing, addressing reproductive justice, international law, feminist legal theory, and social equity. She regularly contributes to academic and practitioner conversations through public speaking, writing, and facilitation.
+                <p className="content-text mb-4">
+                  Her scholarship spans peer-reviewed journals, policy platforms, and public writing, addressing reproductive justice, international law, feminist legal theory, and social equity. She regularly contributes to academic and practitioner conversations through public speaking, writing, and facilitation and has held advisory and expert roles across a range of advocacy and policy environments.
                 </p>
-                <p className="text-gray-800 mb-4 leading-relaxed text-lg">
-                  She has held advisory and expert roles across a range of advocacy and policy environments, with advanced legal training and professional licensure. An active member of several academic and legal associations, her research and practice are grounded in values-driven leadership and committed to fostering dialogue, reflection, and ethical engagement.
+                <p className="content-text mb-4">
+                  She holds advanced legal training and professional licensure and is an active member of several academic and legal associations. Her research and practice are grounded in values-driven leadership, informed by lived experience, and committed to fostering dialogue, reflection, and ethical engagement in both institutional and community settings.
                 </p>
                 <div>
                   <button

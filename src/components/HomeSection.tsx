@@ -1,4 +1,3 @@
-
 import RevealOnScroll from './RevealOnScroll';
 import { useRef, useEffect, useState } from "react";
 
@@ -39,7 +38,7 @@ const HomeSection = () => {
   return (
     <section
       id="home"
-      className="h-screen flex items-center relative bg-gradient-to-br from-[#FFE29F] via-[#FFA99F] to-[#FF719A] overflow-hidden"
+      className="h-screen flex items-center relative page-gradient overflow-hidden"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
@@ -69,14 +68,19 @@ const HomeSection = () => {
               <div className="h-1 w-24 bg-pink-dark mb-6"></div>
             </RevealOnScroll>
             <RevealOnScroll delay={600}>
-              <p className="font-inter text-lg md:text-xl text-gray-900 mb-4 leading-relaxed">
-                A human rights scholar, legal advocate, and community builder committed to advancing a grounded vision of justice and leadership.
+              <p className="content-text mb-4">
+                I'm Dr. Wanjiru Kareithi, a human rights scholar, legal advocate, and community builder committed to advancing a grounded vision of justice and leadership.
               </p>
-              <p className="font-inter text-lg text-gray-800 mb-4 leading-relaxed">
-                Rooted in identity, heritage, and a deep commitment to service, I bring together law, education, and community advocacy to shape systems built on partnership, accountability, and mutual respect.
+              <div className="section-banner">
+                <p className="content-text font-medium text-pink-dark">
+                  Transforming legal education and advocacy through community-centered leadership
+                </p>
+              </div>
+              <p className="content-text mb-4">
+                Rooted in my identity, heritage, and a deep commitment to service, I bring together law, education, and community advocacy to help shape systems built on partnership, accountability, and mutual respect.
               </p>
-              <p className="font-inter text-lg text-gray-800 mb-8 leading-relaxed">
-                My leadership is guided by values of empathy, integrity, and the enduring strength of community, striving to uplift underrepresented voices and nurture transformative leadership.
+              <p className="content-text mb-8">
+                My approach to leadership is guided by deeply held values—empathy, integrity, and the enduring strength of community. In every space I engage, whether academic, legal, or civic, I strive to uplift underrepresented voices and nurture leadership that serves and empowers.
               </p>
               <div>
                 <button
