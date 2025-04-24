@@ -38,9 +38,15 @@ const HomeSection = () => {
   return (
     <section
       id="home"
-      className="h-screen flex items-center relative page-gradient overflow-hidden"
+      className="h-screen flex items-center relative overflow-hidden"
+      style={{
+        backgroundImage: 'url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
     >
-      <div className="container mx-auto px-4">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/90 via-[#C5A028]/80 to-[#B8860B]/70 backdrop-blur-sm"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 mb-8 md:mb-0 flex justify-center">
             <RevealOnScroll>
@@ -82,15 +88,7 @@ const HomeSection = () => {
               <p className="content-text mb-8">
                 My approach to leadership is guided by deeply held values—empathy, integrity, and the enduring strength of community. In every space I engage, whether academic, legal, or civic, I strive to uplift underrepresented voices and nurture leadership that serves and empowers.
               </p>
-              <div>
-                <button
-                  className="font-inter text-pink-dark hover:text-pink border-b-2 border-pink-dark hover:border-pink text-lg font-medium underline underline-offset-2 transition-colors"
-                  onClick={scrollToNextSection}
-                  aria-label="Scroll Down to About"
-                >
-                  Learn More About Me ↓
-                </button>
-              </div>
+              
             </RevealOnScroll>
           </div>
         </div>

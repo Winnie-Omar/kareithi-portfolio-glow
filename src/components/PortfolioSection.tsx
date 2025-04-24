@@ -50,16 +50,16 @@ const PortfolioSection = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
-    <section id="portfolio" className="py-20 bg-ivory">
+    <section id="portfolio" className="py-20 page-gradient">
       <div className="container mx-auto px-4">
         <RevealOnScroll>
-          <h2 className="section-title text-pink-dark">Portfolio</h2>
+          <h2 className="section-title text-white">Portfolio</h2>
         </RevealOnScroll>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {portfolioCards.map((card, idx) => (
             <RevealOnScroll delay={100 + idx * 100} key={card.title}>
               <Card
-                className="bg-white border-pink/20 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:border-pink hover:bg-pink-light group cursor-pointer"
+                className="bg-white/90 backdrop-blur-sm border-transparent transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group cursor-pointer"
                 style={{ minHeight: "360px" }}
                 onClick={() => setOpenIdx(idx)}
               >

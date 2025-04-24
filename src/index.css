@@ -57,15 +57,20 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: "Times New Roman", Times, serif;
   }
 
   body {
-    @apply bg-ivory text-foreground font-inter;
+    @apply bg-background text-foreground;
     font-size: 16px;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Times New Roman", Times, serif;
   }
 }
 
@@ -80,40 +85,25 @@
   }
   
   .section-title {
-    @apply font-playfair text-3xl md:text-4xl font-bold mb-6 relative inline-block;
+    @apply text-3xl md:text-4xl font-bold mb-6 relative inline-block;
     font-size: 2.5rem;
+    font-family: "Times New Roman", Times, serif;
   }
   
   .section-title::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-1/2 h-1 bg-pink-dark;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair;
-  }
-
-  p {
-    @apply text-lg leading-relaxed;
-  }
-  
-  .whatsapp-button {
-    @apply fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full p-4 shadow-lg transition-transform hover:scale-110;
-  }
-  
-  .social-icon {
-    @apply text-pink hover:text-pink-dark transition-colors duration-300 mx-2;
-  }
-  
-  .content-text {
-    @apply text-lg leading-relaxed text-gray-800;
+    display: none;
   }
   
   .page-gradient {
-    @apply bg-gradient-to-br from-[#FFE29F] via-[#FFA99F] to-[#FF719A];
+    @apply bg-gradient-to-br from-[#D4AF37] via-[#C5A028] to-[#B8860B];
   }
   
   .section-banner {
-    @apply w-full py-6 bg-gradient-to-r from-black/10 via-black/5 to-transparent backdrop-blur-sm my-8;
+    @apply w-full py-6 bg-gradient-to-r from-black/20 via-black/10 to-transparent backdrop-blur-sm my-8;
+  }
+
+  .content-text {
+    @apply text-lg leading-relaxed text-gray-800;
+    font-family: "Times New Roman", Times, serif;
   }
 }
