@@ -15,7 +15,7 @@ const AboutSection = () => {
     <section id="about" className="py-20 page-gradient">
       <div className="container mx-auto px-4">
         <RevealOnScroll>
-          <h2 className="section-title text-pink-dark">About Me</h2>
+          <h2 className="section-title text-black">About Me</h2>
         </RevealOnScroll>
         <div className="flex flex-col md:flex-row gap-12 mt-12">
           <div className="w-full md:w-2/5 flex justify-center">
@@ -24,7 +24,7 @@ const AboutSection = () => {
                 <img 
                   src="/about.jpg" 
                   alt="Portrait of Dr. Wanjiru Kareithi" 
-                  className="w-[500px] h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full md:w-[500px] h-auto md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
             </RevealOnScroll>

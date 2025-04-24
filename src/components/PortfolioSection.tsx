@@ -1,4 +1,3 @@
-
 import RevealOnScroll from "./RevealOnScroll";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useState } from "react";
@@ -53,18 +52,14 @@ const PortfolioSection = () => {
     <section id="portfolio" className="py-20 page-gradient">
       <div className="container mx-auto px-4">
         <RevealOnScroll>
-          <h2 className="section-title text-white">Portfolio</h2>
+          <h2 className="section-title text-black">Portfolio</h2>
         </RevealOnScroll>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {portfolioCards.map((card, idx) => (
             <RevealOnScroll delay={100 + idx * 100} key={card.title}>
-              <Card
-                className="bg-white/90 backdrop-blur-sm border-transparent transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group cursor-pointer"
-                style={{ minHeight: "360px" }}
-                onClick={() => setOpenIdx(idx)}
-              >
+              <Card className="bg-white/90 backdrop-blur-sm border-transparent transform transition-all duration-500 hover:scale-105 hover:shadow-2xl group cursor-pointer" onClick={() => setOpenIdx(idx)}>
                 <CardHeader className="pb-2">
-                  <CardTitle className="font-playfair text-2xl font-bold text-pink-dark">
+                  <CardTitle className="font-playfair text-2xl font-bold text-black">
                     {card.title}
                   </CardTitle>
                 </CardHeader>
@@ -72,26 +67,21 @@ const PortfolioSection = () => {
                   <p className="text-gray-700 mt-4 leading-relaxed text-lg mb-6">
                     {card.summary}
                   </p>
-                  <button
-                    className="px-5 py-2 bg-pink-dark group-hover:bg-pink text-white font-medium transition-colors hover:shadow-xl"
-                  >
-                    Learn More
-                  </button>
                 </CardContent>
                 {openIdx === idx && (
                   <Dialog open={true} onOpenChange={() => setOpenIdx(null)}>
                     <DialogContent className="max-w-3xl">
                       <DialogHeader>
-                        <DialogTitle className="font-playfair text-2xl text-pink-dark">{card.title}</DialogTitle>
+                        <DialogTitle className="font-playfair text-2xl text-black">{card.title}</DialogTitle>
                       </DialogHeader>
                       <div className="mt-6 text-gray-800 space-y-6">
                         <div>
                           <p className="text-lg mb-4">{card.details.description}</p>
-                          <h4 className="font-bold text-lg text-pink-dark mb-2">Core Focus</h4>
+                          <h4 className="font-bold text-lg text-black mb-2">Core Focus</h4>
                           <p className="text-lg mb-6">{card.details.coreFocus}</p>
                         </div>
                         <div>
-                          <h4 className="font-bold text-lg text-pink-dark mb-3">Key Takeaways:</h4>
+                          <h4 className="font-bold text-lg text-black mb-3">Key Takeaways:</h4>
                           <ul className="ml-4 list-disc space-y-2">
                             {card.details.takeaways.map((tk, index) => (
                               <li key={index} className="text-lg">{tk}</li>
@@ -99,6 +89,12 @@ const PortfolioSection = () => {
                           </ul>
                         </div>
                       </div>
+                      <button 
+                        onClick={() => setOpenIdx(null)}
+                        className="mt-4 px-4 py-2 bg-gray-200 text-black rounded hover:bg-gray-300 transition-colors"
+                      >
+                        Cancel
+                      </button>
                     </DialogContent>
                   </Dialog>
                 )}

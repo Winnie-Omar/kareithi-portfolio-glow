@@ -60,11 +60,12 @@ const ResearchSection = () => {
       type: "Book Review"
     }
   ];
+
   return (
     <section id="research" className="py-20 page-gradient">
       <div className="container mx-auto px-4">
         <RevealOnScroll>
-          <h2 className="section-title">Research &amp; Publications</h2>
+          <h2 className="section-title text-black">Research &amp; Publications</h2>
         </RevealOnScroll>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {publications.map((pub, index) => (
@@ -75,37 +76,18 @@ const ResearchSection = () => {
                     <span className="text-gray-500 text-xs">{pub.type}</span>
                     <span className="text-gray-400 text-xs">{pub.year}</span>
                   </div>
-                  <h3 className="font-playfair text-xl font-semibold mb-3 text-gray-800">{pub.title}</h3>
+                  <h3 className="font-playfair text-xl font-semibold mb-3 text-black">{pub.title}</h3>
                   <p className="text-gray-700 mb-4">{pub.description}</p>
-                  {pub.link &&
-                    <a 
-                      href={pub.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-teal hover:underline font-medium"
-                    >
-                      Read More 
+                  {pub.link && (
+                    <a href={pub.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-teal hover:underline font-medium">
                       <ExternalLink size={16} className="ml-1" />
                     </a>
-                  }
+                  )}
                 </div>
               </div>
             </RevealOnScroll>
           ))}
         </div>
-        <RevealOnScroll delay={200}>
-          <div className="mt-12 text-center">
-            <a 
-              href="https://scholar.google.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center bg-teal hover:bg-teal/90 text-white py-2 px-6 rounded-md transition-colors duration-300"
-            >
-              View Full Publication List
-              <ExternalLink size={16} className="ml-2" />
-            </a>
-          </div>
-        </RevealOnScroll>
       </div>
     </section>
   );
