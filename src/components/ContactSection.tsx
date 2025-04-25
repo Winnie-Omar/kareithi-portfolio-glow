@@ -37,7 +37,13 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 page-gradient">
+    <section id="contact" className="py-20 page-gradient relative">
+      <div className="absolute inset-0 opacity-20" style={{
+        backgroundImage: 'url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}></div>
       <div className="container mx-auto px-4">
         <RevealOnScroll>
           <h2 className="section-title">Get In Touch</h2>

@@ -27,7 +27,7 @@ const HomeSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center relative overflow-hidden" style={{
-      backgroundImage: 'url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070")',
+      backgroundImage: 'url("https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=2070")',
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }}>
@@ -52,9 +52,9 @@ const HomeSection = () => {
               <p className="content-text mb-4">
                 I'm Dr. Wanjiru Kareithi, a human rights scholar, legal advocate, and community builder committed to advancing a grounded vision of justice and leadership.
               </p>
-              <p className="content-text text-2xl md:text-3xl font-playfair mb-4">
+              <h2 className="section-title text-3xl md:text-4xl font-bold mb-6 text-black">
                 Transforming legal education and advocacy through community-centered leadership
-              </p>
+              </h2>
               <p className="content-text mb-4">
                 Rooted in my identity, heritage, and a deep commitment to service, I bring together law, education, and community advocacy to help shape systems built on partnership, accountability, and mutual respect.
               </p>
@@ -66,7 +66,7 @@ const HomeSection = () => {
           <div className="w-full md:w-1/2 flex justify-center">
             <RevealOnScroll>
               <div className="relative overflow-hidden shadow-xl group">
-                <img src="/home.jpg" alt="Dr. Wanjiru Kareithi" className="w-full md:w-[500px] h-auto md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src="/home.jpg" alt="Dr. Wanjiru Kareithi" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
             </RevealOnScroll>
           </div>

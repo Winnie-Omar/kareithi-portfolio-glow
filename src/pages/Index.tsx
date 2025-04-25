@@ -1,14 +1,10 @@
-
-import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import HomeSection from '@/components/HomeSection';
 import AboutSection from '@/components/AboutSection';
 import PortfolioSection from '@/components/PortfolioSection';
 import ResearchSection from '@/components/ResearchSection';
 import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
 import WhatsAppBot from '@/components/WhatsAppBot';
-import WelcomeModal from '@/components/WelcomeModal';
 
 const Index = () => {
   useEffect(() => {
@@ -32,7 +28,6 @@ const Index = () => {
   
   return (
     <div className="min-h-screen bg-ivory">
-      <WelcomeModal />
       <Navigation />
       <main>
         <HomeSection />
@@ -42,7 +37,6 @@ const Index = () => {
         <ContactSection />
       </main>
       <WhatsAppBot />
-      <Footer />
     </div>
   );
 };

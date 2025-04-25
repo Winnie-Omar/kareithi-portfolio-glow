@@ -55,22 +55,31 @@ const ResearchSection = () => {
   ];
 
   return (
-    <section id="research" className="py-20 page-gradient">
-      <div className="container mx-auto px-4">
+    <section id="research" className="py-20 page-gradient relative">
+      <div className="absolute inset-0 opacity-20" style={{
+        backgroundImage: 'url("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=2070")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}></div>
+      <div className="container mx-auto px-4 relative z-10">
         <RevealOnScroll>
-          <h2 className="section-title text-black">Research &amp; Publications</h2>
+          <div className="section-banner mb-12">
+            <h2 className="section-title text-black text-center">Research &amp; Publications</h2>
+            <p className="text-center text-black/80 mt-4 font-playfair text-xl">Advancing Knowledge Through Scholarly Inquiry</p>
+          </div>
         </RevealOnScroll>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {publications.map((pub, index) => (
             <RevealOnScroll key={pub.id} delay={index * 100}>
-              <div className="bg-white rounded-lg shadow-md overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-md overflow-hidden h-full hover:shadow-lg transition-shadow duration-300">
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-gray-500 text-xs">{pub.type}</span>
                     <span className="text-gray-400 text-xs">{pub.year}</span>
                   </div>
-                  <h3 className="font-playfair text-xl font-semibold mb-3 text-black">{pub.title}</h3>
-                  <p className="text-gray-700 mb-4">{pub.description}</p>
+                  <h3 className="text-xl font-semibold mb-3 text-black">{pub.title}</h3>
+                  <p className="text-gray-700">{pub.description}</p>
                 </div>
               </div>
             </RevealOnScroll>

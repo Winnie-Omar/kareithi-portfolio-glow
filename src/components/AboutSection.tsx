@@ -2,7 +2,13 @@ import RevealOnScroll from './RevealOnScroll';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 page-gradient">
+    <section id="about" className="py-20 page-gradient relative">
+      <div className="absolute inset-0 opacity-20" style={{
+        backgroundImage: 'url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2074")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}></div>
       <div className="container mx-auto px-4">
         <RevealOnScroll>
           <h2 className="section-title text-black">About Me</h2>
