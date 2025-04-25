@@ -1,3 +1,5 @@
+
+import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import HomeSection from '@/components/HomeSection';
 import AboutSection from '@/components/AboutSection';
