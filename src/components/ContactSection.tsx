@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -5,35 +6,65 @@ import { Textarea } from '@/components/ui/textarea';
 import { Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import RevealOnScroll from './RevealOnScroll';
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you would send the form data to a backend
-    console.log('Form submitted:', formData);
-    // Show success toast
-    toast({
-      title: "Message Sent",
-      description: "Thank you for your message. I will get back to you soon.",
-    });
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+    
+    try {
+      // Save the form data to Supabase
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          { 
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message
+          }
+        ]);
+        
+      if (error) throw error;
+
+      // Show success toast
+      toast({
+        title: "Message Sent",
+        description: "Thank you for your message. I will get back to you soon.",
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -55,29 +86,14 @@ const ContactSection = () => {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="font-playfair text-xl font-semibold mb-4">Contact Information</h3>
                 <div className="mb-6">
-                  <p className="font-medium text-gray-800 mb-1">Address:</p>
-                  <p className="text-gray-700 text-lg">
-                    College of Arts &amp; Architecture,<br />
-                    The Pennsylvania State University<br />
-                    124 Borland Building<br />
-                    University Park, PA 16802
-                  </p>
-                </div>
-                <div className="mb-6">
                   <p className="font-medium text-gray-800 mb-1">Email:</p>
                   <a 
-                    href="mailto:mqk6198@psu.edu" 
+                    href="mailto:wanjiruk@wanjirukareithi.com" 
                     className="flex items-center text-pink hover:text-pink-dark transition-colors text-lg"
                   >
                     <Mail size={18} className="mr-2" />
-                    mqk6198@psu.edu
+                    wanjiruk@wanjirukareithi.com
                   </a>
-                </div>
-                <div className="mb-6">
-                  <p className="font-medium text-gray-800 mb-1">Phone:</p>
-                  <p className="text-gray-700 text-lg">
-                    5822030835
-                  </p>
                 </div>
               </div>
             </RevealOnScroll>
@@ -117,6 +133,19 @@ const ContactSection = () => {
                       />
                     </div>
                     <div>
+                      <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="subject">
+                        Subject
+                      </label>
+                      <Input 
+                        id="subject" 
+                        name="subject" 
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        className="w-full"
+                      />
+                    </div>
+                    <div>
                       <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="message">
                         Message
                       </label>
@@ -134,8 +163,9 @@ const ContactSection = () => {
                       <Button 
                         type="submit" 
                         className="w-full bg-pink-dark hover:bg-pink text-white transition-colors"
+                        disabled={isSubmitting}
                       >
-                        Send Message
+                        {isSubmitting ? 'Sending...' : 'Send Message'}
                       </Button>
                     </div>
                   </div>
