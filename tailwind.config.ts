@@ -71,7 +71,16 @@ export default {
 					light: '#FFDEE2',
 					DEFAULT: '#FF83C4',
 					dark: '#D946EF'
-				}
+				},
+				// New professional background colors
+				'soft-green': '#F2FCE2',
+				'soft-yellow': '#FEF7CD',
+				'soft-orange': '#FEC6A1',
+				'soft-purple': '#E5DEFF',
+				'soft-pink': '#FFDEE2',
+				'soft-peach': '#FDE1D3',
+				'soft-blue': '#D3E4FD',
+				'soft-gray': '#F1F0FB'
 			},
 			fontFamily: {
 				'playfair': ['"Playfair Display"', 'serif'],

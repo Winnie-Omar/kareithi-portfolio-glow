@@ -1,12 +1,13 @@
 
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ChevronUp } from 'lucide-react';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
-
+  const location = useLocation();
+  
   useEffect(() => {
     const handleScroll = () => {
       // For the sticky nav
@@ -14,35 +15,11 @@ const Navigation = () => {
       
       // For the scroll to top button
       setShowScrollTop(window.scrollY > 500);
-      
-      // For active nav item
-      const sections = document.querySelectorAll('section[id]');
-      const scrollPosition = window.pageYOffset + 100;
-
-      sections.forEach(section => {
-        const sectionTop = (section as HTMLElement).offsetTop;
-        const sectionHeight = section.clientHeight;
-        const sectionId = section.getAttribute('id') || '';
-        
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          setActiveSection(sectionId);
-        }
-      });
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      window.scrollTo({
-        top: section.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -52,11 +29,11 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'research', label: 'Research & Publications' },
-    { id: 'advocacy', label: 'Advocacy Work' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'home', path: '/', label: 'Home' },
+    { id: 'about', path: '/about', label: 'About' },
+    { id: 'research', path: '/research', label: 'Research & Publications' },
+    { id: 'portfolio', path: '/portfolio', label: 'Advocacy Work' },
+    { id: 'contact', path: '/contact', label: 'Contact' },
   ];
 
   return (
@@ -65,29 +42,28 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <nav className="flex justify-between items-center">
             <h1 className="font-playfair text-xl font-bold">
-              <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="text-gold hover:opacity-80 transition-opacity">
+              <Link to="/" className="text-gold hover:opacity-80 transition-opacity">
                 Dr. Wanjiru Kareithi
-              </a>
+              </Link>
             </h1>
             
             <div className="hidden md:block">
               <ul className="flex space-x-8">
                 {navItems.map((item) => (
                   <li key={item.id}>
-                    <a
-                      href={`#${item.id}`}
-                      onClick={(e) => { e.preventDefault(); scrollToSection(item.id); }}
-                      className={`font-inter ${activeSection === item.id ? 'text-gold font-medium' : 'text-gray-700 hover:text-gold'} transition-colors`}
+                    <Link
+                      to={item.path}
+                      className={`font-inter ${location.pathname === item.path ? 'text-gold font-medium' : 'text-gray-700 hover:text-gold'} transition-colors`}
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
             
             <div className="md:hidden">
-              <MobileMenu navItems={navItems} scrollToSection={scrollToSection} activeSection={activeSection} />
+              <MobileMenu navItems={navItems} activePath={location.pathname} />
             </div>
           </nav>
         </div>
@@ -106,10 +82,9 @@ const Navigation = () => {
 };
 
 // Mobile Menu Component
-const MobileMenu = ({ navItems, scrollToSection, activeSection }: { 
-  navItems: { id: string; label: string }[], 
-  scrollToSection: (id: string) => void,
-  activeSection: string
+const MobileMenu = ({ navItems, activePath }: { 
+  navItems: { id: string; path: string; label: string }[], 
+  activePath: string
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -117,8 +92,7 @@ const MobileMenu = ({ navItems, scrollToSection, activeSection }: {
     setIsOpen(!isOpen);
   };
 
-  const handleLinkClick = (id: string) => {
-    scrollToSection(id);
+  const handleLinkClick = () => {
     setIsOpen(false);
   };
 
@@ -137,14 +111,14 @@ const MobileMenu = ({ navItems, scrollToSection, activeSection }: {
       {isOpen && (
         <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.id}
-              href={`#${item.id}`}
-              onClick={(e) => { e.preventDefault(); handleLinkClick(item.id); }}
-              className={`block px-4 py-2 text-sm ${activeSection === item.id ? 'text-gold font-medium' : 'text-gray-700 hover:bg-gray-100'}`}
+              to={item.path}
+              onClick={handleLinkClick}
+              className={`block px-4 py-2 text-sm ${activePath === item.path ? 'text-gold font-medium' : 'text-gray-700 hover:bg-gray-100'}`}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
       )}

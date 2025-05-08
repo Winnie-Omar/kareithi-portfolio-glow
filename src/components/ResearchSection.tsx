@@ -1,3 +1,4 @@
+
 import RevealOnScroll from './RevealOnScroll';
 
 interface Publication {
@@ -19,7 +20,7 @@ const ResearchSection = () => {
     },
     {
       id: 2,
-      title: "‘[E]ven in our fear [...] we wanted to do this’: Feminist organising for abortion in Africa as palimpsestic",
+      title: "'[E]ven in our fear [...] we wanted to do this': Feminist organising for abortion in Africa as palimpsestic",
       description: "A study on feminist organizing for abortion rights across Africa.",
       year: "2025",
       type: "Peer Reviewed Journal"
@@ -55,16 +56,18 @@ const ResearchSection = () => {
   ];
 
   return (
-    <section id="research" className="py-20 page-gradient relative">
-      <div className="absolute inset-0 opacity-20" style={{
+    <section id="research" className="py-20 relative min-h-[calc(100vh-5rem)]">
+      <div className="absolute inset-0 bg-gradient-to-br from-soft-green to-soft-yellow z-0"></div>
+      <div className="absolute inset-0 bg-opacity-15" style={{
         backgroundImage: 'url("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=2070")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundAttachment: 'fixed',
+        opacity: 0.2
       }}></div>
       <div className="container mx-auto px-4 relative z-10">
         <RevealOnScroll>
-          <div className="section-banner mb-12">
+          <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-lg p-8 mb-12">
             <h2 className="section-title text-black text-center">Research &amp; Publications</h2>
             <p className="text-center text-black/80 mt-4 font-playfair text-xl">Advancing Knowledge Through Scholarly Inquiry</p>
           </div>
