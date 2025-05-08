@@ -2,7 +2,10 @@
 import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import HomeSection from '@/components/HomeSection';
+import AboutSection from '@/components/AboutSection';
+import PortfolioSection from '@/components/PortfolioSection';
 import WhatsAppBot from '@/components/WhatsAppBot';
+import WelcomeModal from '@/components/WelcomeModal';
 
 const Index = () => {
   useEffect(() => {
@@ -14,6 +17,8 @@ const Index = () => {
       <Navigation />
       <main>
         <HomeSection />
+        <AboutSection />
+        <PortfolioSection />
       </main>
       <WhatsAppBot />
     </div>

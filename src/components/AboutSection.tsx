@@ -1,9 +1,10 @@
+
 import RevealOnScroll from './RevealOnScroll';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 page-gradient relative">
-      <div className="absolute inset-0 opacity-20" style={{
+    <section id="about" className="py-20 bg-white relative">
+      <div className="absolute inset-0 opacity-10" style={{
         backgroundImage: 'url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2074")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -11,12 +12,12 @@ const AboutSection = () => {
       }}></div>
       <div className="container mx-auto px-4">
         <RevealOnScroll>
-          <h2 className="section-title text-black">About Me</h2>
+          <h2 className="font-playfair text-4xl font-bold mb-12 text-center text-black">About Me</h2>
         </RevealOnScroll>
         <div className="flex flex-col md:flex-row gap-12 mt-12">
           <div className="w-full md:w-2/5 flex justify-center">
             <RevealOnScroll>
-              <div className="relative overflow-hidden shadow-lg group">
+              <div className="relative overflow-hidden shadow-lg rounded-lg group">
                 <img 
                   src="/about.jpg" 
                   alt="Portrait of Dr. Wanjiru Kareithi" 
@@ -34,7 +35,7 @@ const AboutSection = () => {
                 <p className="content-text mb-4">
                   With more than twelve years of experience, she has contributed to initiatives across academic, legal, and civil society sectors, supporting systems change and public interest innovation. Her teaching and program design emphasizes leadership development, critical inquiry, and collaborative problem-solving.
                 </p>
-                <h3 className="section-title text-black mb-6">Bridging Theory and Practice in Legal Education and Advocacy</h3>
+                <h3 className="font-playfair text-2xl font-bold mb-6 text-black">Bridging Theory and Practice in Legal Education and Advocacy</h3>
                 <p className="content-text mb-4">
                   Based in the United States, Dr. Kareithi engages in interdisciplinary work that integrates legal research, education, and advocacy, drawing on leadership philosophies and community values that inform her commitment to social transformation.
                 </p>
@@ -51,13 +52,13 @@ const AboutSection = () => {
         
         <div className="mt-20">
           <RevealOnScroll>
-            <h2 className="section-title text-black mb-8">Pillars of Purpose</h2>
+            <h2 className="font-playfair text-3xl font-bold mb-8 text-center text-black">Pillars of Purpose</h2>
           </RevealOnScroll>
           
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
             {pillarsOfPurpose.map((pillar, index) => (
               <RevealOnScroll delay={index * 100} key={pillar.title}>
-                <div className="bg-white p-6 rounded shadow-md border-l-4 border-pink-dark h-full transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
+                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-pink-dark h-full transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
                   <h4 className="font-playfair text-xl font-semibold mb-3 text-pink-dark">{pillar.title}</h4>
                   <p className="text-gray-700 text-lg">
                     {pillar.description}

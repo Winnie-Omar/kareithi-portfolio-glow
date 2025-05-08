@@ -10,7 +10,7 @@ const AboutPage = () => {
   }, []);
   
   return (
-    <div className="min-h-screen bg-soft-blue">
+    <div className="min-h-screen bg-white">
       <Navigation />
       <main className="pt-20">
         <AboutSection />

@@ -1,3 +1,4 @@
+
 import RevealOnScroll from './RevealOnScroll';
 import { useRef, useEffect, useState } from "react";
 
@@ -52,7 +53,7 @@ const HomeSection = () => {
               <p className="content-text mb-4">
                 I'm Dr. Wanjiru Kareithi, a human rights scholar, legal advocate, and community builder committed to advancing a grounded vision of justice and leadership.
               </p>
-              <h2 className="section-title text-3xl md:text-4xl font-bold mb-6 text-black">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6 text-black">
                 Transforming legal education and advocacy through community-centered leadership
               </h2>
               <p className="content-text mb-4">
@@ -65,8 +66,8 @@ const HomeSection = () => {
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
             <RevealOnScroll>
-              <div className="relative overflow-hidden shadow-xl group">
-                <img src="/home.jpg" alt="Dr. Wanjiru Kareithi" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="relative overflow-hidden shadow-xl rounded-lg max-w-md mx-auto group">
+                <img src="/home.jpg" alt="Dr. Wanjiru Kareithi" className="w-full h-auto max-h-[600px] object-cover object-center transition-transform duration-700 group-hover:scale-105" />
               </div>
             </RevealOnScroll>
           </div>
