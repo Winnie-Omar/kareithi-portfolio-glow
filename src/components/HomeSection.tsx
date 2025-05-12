@@ -2,7 +2,7 @@
 import RevealOnScroll from './RevealOnScroll';
 import { useRef, useEffect, useState } from "react";
 
-const roles = ["Legal Scholar", "Advocate", "Educator"];
+const roles = ["Scholar", "Advocate", "Educator"];
 const typeSpeed = 150;
 const pauseBetweenRoles = 1500;
 
@@ -51,16 +51,16 @@ const HomeSection = () => {
             </RevealOnScroll>
             <RevealOnScroll delay={600}>
               <p className="content-text mb-4 text-white">
-                I'm Dr. Wanjiru Kareithi, a human rights scholar, legal advocate, and community builder committed to advancing a grounded vision of justice and leadership.
+                I'm Dr. Wanjiru Kareithi, a human rights scholar, advocate, and community builder committed to advancing a grounded vision of justice and leadership.
               </p>
               <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6 text-white">
-                Transforming legal education and advocacy through community-centered leadership
+                Transforming education and advocacy through community-centered leadership
               </h2>
               <p className="content-text mb-4 text-white">
                 Rooted in my identity, heritage, and a deep commitment to service, I bring together law, education, and community advocacy to help shape systems built on partnership, accountability, and mutual respect.
               </p>
               <p className="content-text mb-8 text-white">
-                My approach to leadership is guided by deeply held values—empathy, integrity, and the enduring strength of community. In every space I engage, whether academic, legal, or civic, I strive to uplift underrepresented voices and nurture leadership that serves and empowers.
+                My approach to leadership is guided by deeply held values—empathy, integrity, and the enduring strength of community. In every space I engage, whether academic, or civic, I strive to uplift underrepresented voices and nurture leadership that serves and empowers.
               </p>
             </RevealOnScroll>
           </div>
