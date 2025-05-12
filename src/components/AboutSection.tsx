@@ -1,15 +1,12 @@
-
 import RevealOnScroll from './RevealOnScroll';
-
 const AboutSection = () => {
-  return (
-    <section id="about" className="py-20 bg-white relative">
+  return <section id="about" className="py-20 bg-white relative">
       <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: 'url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2074")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}></div>
+      backgroundImage: 'url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2074")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed'
+    }}></div>
       <div className="container mx-auto px-4">
         <RevealOnScroll>
           <h2 className="font-playfair text-4xl font-bold mb-12 text-center text-black">About Me</h2>
@@ -18,11 +15,7 @@ const AboutSection = () => {
           <div className="w-full md:w-2/5 flex justify-center">
             <RevealOnScroll>
               <div className="relative overflow-hidden shadow-lg rounded-lg group">
-                <img 
-                  src="/about.jpg" 
-                  alt="Portrait of Dr. Wanjiru Kareithi" 
-                  className="w-full md:w-[500px] h-auto md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                <img src="/about.jpg" alt="Portrait of Dr. Wanjiru Kareithi" className="w-full md:w-[500px] h-auto md:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
             </RevealOnScroll>
           </div>
@@ -35,7 +28,7 @@ const AboutSection = () => {
                 <p className="content-text mb-4">
                   With more than twelve years of experience, she has contributed to initiatives across academic, legal, and civil society sectors, supporting systems change and public interest innovation. Her teaching and program design emphasizes leadership development, critical inquiry, and collaborative problem-solving.
                 </p>
-                <h3 className="font-playfair text-2xl font-bold mb-6 text-black">Bridging Theory and Practice in Legal Education and Advocacy</h3>
+                <h3 className="font-playfair text-2xl font-bold mb-6 text-black">Bridging Theory and Practice in Education and Advocacy</h3>
                 <p className="content-text mb-4">
                   Based in the United States, Dr. Kareithi engages in interdisciplinary work that integrates legal research, education, and advocacy, drawing on leadership philosophies and community values that inform her commitment to social transformation.
                 </p>
@@ -56,44 +49,33 @@ const AboutSection = () => {
           </RevealOnScroll>
           
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-            {pillarsOfPurpose.map((pillar, index) => (
-              <RevealOnScroll delay={index * 100} key={pillar.title}>
+            {pillarsOfPurpose.map((pillar, index) => <RevealOnScroll delay={index * 100} key={pillar.title}>
                 <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-pink-dark h-full transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
                   <h4 className="font-playfair text-xl font-semibold mb-3 text-pink-dark">{pillar.title}</h4>
                   <p className="text-gray-700 text-lg">
                     {pillar.description}
                   </p>
                 </div>
-              </RevealOnScroll>
-            ))}
+              </RevealOnScroll>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
-const pillarsOfPurpose = [
-  {
-    title: "Justice",
-    description: "Advancing fair and responsive systems through legal scholarship, advocacy, and praxis, committed to meaningful change across institutions and communities."
-  },
-  {
-    title: "Empowerment",
-    description: "Supporting emerging leaders and amplifying underrepresented voices, cultivating environments where individuals are equipped to lead with confidence and clarity."
-  },
-  {
-    title: "Community",
-    description: "Fostering enduring partnerships built on trust, shared learning, and mutual accountability, bridging disciplines, sectors, and lived experiences."
-  },
-  {
-    title: "Global Perspective",
-    description: "Integrating localized knowledge with broader worldviews, drawing on diverse cultural frameworks to inform dialogue, shape scholarship, and inspire transformation."
-  },
-  {
-    title: "Integrity",
-    description: "Rooting leadership in empathy, honesty, and the richness of lived experience, guided by deeply held values and a commitment to truth, care, and responsibility."
-  }
-];
-
+const pillarsOfPurpose = [{
+  title: "Justice",
+  description: "Advancing fair and responsive systems through legal scholarship, advocacy, and praxis, committed to meaningful change across institutions and communities."
+}, {
+  title: "Empowerment",
+  description: "Supporting emerging leaders and amplifying underrepresented voices, cultivating environments where individuals are equipped to lead with confidence and clarity."
+}, {
+  title: "Community",
+  description: "Fostering enduring partnerships built on trust, shared learning, and mutual accountability, bridging disciplines, sectors, and lived experiences."
+}, {
+  title: "Global Perspective",
+  description: "Integrating localized knowledge with broader worldviews, drawing on diverse cultural frameworks to inform dialogue, shape scholarship, and inspire transformation."
+}, {
+  title: "Integrity",
+  description: "Rooting leadership in empathy, honesty, and the richness of lived experience, guided by deeply held values and a commitment to truth, care, and responsibility."
+}];
 export default AboutSection;
