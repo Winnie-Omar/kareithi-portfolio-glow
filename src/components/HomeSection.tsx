@@ -51,8 +51,9 @@ const HomeSection = () => {
             </RevealOnScroll>
             <RevealOnScroll delay={600}>
               <p className="content-text mb-4 text-white">
-                I'm Dr. Wanjiru Kareithi, a human rights scholar, advocate, and community builder committed to advancing a grounded vision of justice and leadership.
+                Dr. Wanjiru Kareithi is an educator, researcher, and legal practitioner from Kenya, deeply grounded in the values and traditions of her heritage. With expertise in law, policy, and community-centered partnerships, she brings a proudly rooted, Pan-African perspective to her work.
               </p>
+              
               <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6 text-white">
                 Transforming education and advocacy through community-centered leadership
               </h2>
