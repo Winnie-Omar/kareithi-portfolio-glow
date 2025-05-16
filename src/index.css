@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 326 100% 70%;
+    --primary: 0 0% 0%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 310 90% 60%;
+    --secondary: 0 0% 100%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
@@ -32,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 326 100% 70%;
+    --ring: 0 0% 0%;
 
     --radius: 0.5rem;
 
@@ -95,7 +96,7 @@
   }
   
   .page-gradient {
-    @apply bg-gradient-to-br from-[#D4AF37] via-[#C5A028] to-[#B8860B];
+    @apply bg-gradient-to-br from-[#000000] via-[#333333] to-[#666666];
   }
   
   .section-banner {

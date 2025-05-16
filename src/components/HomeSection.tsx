@@ -47,11 +47,11 @@ const HomeSection = () => {
               </div>
             </RevealOnScroll>
             <RevealOnScroll delay={400}>
-              <div className="h-1 w-24 bg-pink-dark mb-6"></div>
+              <div className="h-1 w-24 bg-black mb-6"></div>
             </RevealOnScroll>
             <RevealOnScroll delay={600}>
               <p className="content-text mb-4 text-white">
-                Dr. Wanjiru Kareithi is an educator, researcher, and legal practitioner from Kenya, deeply grounded in the values and traditions of her heritage. With expertise in law, policy, and community-centered partnerships, she brings a proudly rooted, Pan-African perspective to her work.
+                Dr. Wanjiru Kareithi is an educator, researcher, and practitioner from Kenya, deeply grounded in the values and traditions of her heritage. With expertise in law, policy, and community-centered partnerships, she brings a proudly rooted, Pan-African perspective to her work.
               </p>
               
               <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6 text-white">

@@ -50,14 +50,14 @@ const WhatsAppBot = () => {
       <button
         className={`
           fixed bottom-6 right-6 z-[101]
-          bg-pink-dark text-white rounded-full p-4 shadow-2xl
+          bg-green-600 text-white rounded-full p-4 shadow-2xl
           hover:scale-110 transition-all
           animate-pulse
           flex items-center justify-center
         `}
         aria-label="Chat with me on WhatsApp"
         onClick={() => setOpen((o) => !o)}
-        style={{ boxShadow: "0 8px 32px 0 rgba(216,70,239,0.16)" }}
+        style={{ boxShadow: "0 8px 32px 0 rgba(34,197,94,0.16)" }}
       >
         <MessageCircle size={28} />
       </button>
@@ -68,14 +68,14 @@ const WhatsAppBot = () => {
           ref={botRef}
           className={`
             fixed bottom-24 right-8 z-[102] max-w-xs w-full
-            bg-white border-2 border-pink-dark rounded-2xl shadow-2xl
+            bg-white border-2 border-green-600 rounded-2xl shadow-2xl
             ${botBoxAnim}
             animate-fade-in flex flex-col
           `}
-          style={{ minHeight: '280px', boxShadow: "0 8px 48px 0 rgba(216,70,239,0.15)" }}
+          style={{ minHeight: '280px', boxShadow: "0 8px 48px 0 rgba(34,197,94,0.15)" }}
         >
           {/* WhatsApp style header */}
-          <div className="bg-pink-dark text-white rounded-t-2xl px-4 py-3 flex items-center gap-2">
+          <div className="bg-green-600 text-white rounded-t-2xl px-4 py-3 flex items-center gap-2">
             <MessageSquare size={22} className="text-green-300" />
             <span className="font-semibold text-base">Chat with Me</span>
           </div>
@@ -89,7 +89,7 @@ const WhatsAppBot = () => {
                     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(q.message)}`;
                     window.open(url, "_blank");
                   }}
-                  className="w-full py-2 px-4 bg-pink/20 hover:bg-pink/40 text-pink-dark font-medium rounded transition"
+                  className="w-full py-2 px-4 bg-green-100 hover:bg-green-200 text-green-800 font-medium rounded transition"
                 >
                   {q.label}
                 </button>
@@ -97,7 +97,7 @@ const WhatsAppBot = () => {
             </div>
           </div>
           <button
-            className="absolute top-2 right-3 text-pink hover:text-pink-dark transition text-xl"
+            className="absolute top-2 right-3 text-gray-500 hover:text-gray-700 transition text-xl"
             aria-label="Close"
             onClick={() => setOpen(false)}
           >

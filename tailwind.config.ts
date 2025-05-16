@@ -63,21 +63,16 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated custom colors for Dr. Kareithi's portfolio
+				// Updated custom colors with black and white instead of pink
 				ivory: '#F8F7F3',
-				gold: '#D946EF', // Changed to pink
-				teal: '#FF83C4', // Changed to lighter pink
-				pink: {
-					light: '#FFDEE2',
-					DEFAULT: '#FF83C4',
-					dark: '#D946EF'
-				},
-				// New professional background colors
+				gold: '#000000', // Changed to black
+				teal: '#FFFFFF', // Changed to white
+				// Soft background colors
 				'soft-green': '#F2FCE2',
 				'soft-yellow': '#FEF7CD',
 				'soft-orange': '#FEC6A1',
 				'soft-purple': '#E5DEFF',
-				'soft-pink': '#FFDEE2',
+				'soft-pink': '#F8F8F8', // Changed to white
 				'soft-peach': '#FDE1D3',
 				'soft-blue': '#D3E4FD',
 				'soft-gray': '#F1F0FB'

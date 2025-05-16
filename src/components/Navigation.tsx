@@ -41,7 +41,7 @@ const Navigation = () => {
     setIsSubmitting(true);
     
     // Simple pin verification - in a real app, this would be more secure
-    if (cvPin === '1234') {
+    if (cvPin === '1985') {
       // Create a link to download the CV
       const link = document.createElement('a');
       link.href = '/Wanjiru_Kareithi_Resume.pdf';
@@ -81,7 +81,7 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <nav className="flex justify-between items-center">
             <h1 className="font-playfair text-xl font-bold">
-              <Link to="/" className="text-gold hover:opacity-80 transition-opacity">
+              <Link to="/" className="text-black hover:opacity-80 transition-opacity">
                 Dr. Wanjiru Kareithi
               </Link>
             </h1>
@@ -93,7 +93,7 @@ const Navigation = () => {
                     {item.onClick ? (
                       <button
                         onClick={item.onClick}
-                        className={`font-inter ${location.pathname === item.path ? 'text-gold font-medium' : 'text-gray-700 hover:text-gold'} transition-colors flex items-center gap-2`}
+                        className={`font-inter ${location.pathname === item.path ? 'text-black font-medium' : 'text-gray-700 hover:text-black'} transition-colors flex items-center gap-2`}
                       >
                         {item.id === 'cv' && <FileText size={16} />}
                         {item.label}
@@ -101,7 +101,7 @@ const Navigation = () => {
                     ) : (
                       <Link
                         to={item.path}
-                        className={`font-inter ${location.pathname === item.path ? 'text-gold font-medium' : 'text-gray-700 hover:text-gold'} transition-colors`}
+                        className={`font-inter ${location.pathname === item.path ? 'text-black font-medium' : 'text-gray-700 hover:text-black'} transition-colors`}
                       >
                         {item.label}
                       </Link>
@@ -121,7 +121,7 @@ const Navigation = () => {
       {/* Scroll to top button */}
       <button 
         onClick={scrollToTop}
-        className={`fixed right-8 bottom-8 p-3 bg-gold text-white rounded-full shadow-lg z-40 transition-all duration-300 ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        className={`fixed right-8 bottom-8 p-3 bg-black text-white rounded-full shadow-lg z-40 transition-all duration-300 ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         aria-label="Scroll to top"
       >
         <ChevronUp size={24} />
@@ -197,7 +197,7 @@ const MobileMenu = ({ navItems, activePath }: {
               <button
                 key={item.id}
                 onClick={() => handleItemClick(item.onClick)}
-                className={`block px-4 py-2 text-sm w-full text-left ${activePath === item.path ? 'text-gold font-medium' : 'text-gray-700 hover:bg-gray-100'}`}
+                className={`block px-4 py-2 text-sm w-full text-left ${activePath === item.path ? 'text-black font-medium' : 'text-gray-700 hover:bg-gray-100'}`}
               >
                 <div className="flex items-center gap-2">
                   {item.id === 'cv' && <FileText size={14} />}
@@ -209,7 +209,7 @@ const MobileMenu = ({ navItems, activePath }: {
                 key={item.id}
                 to={item.path}
                 onClick={() => handleItemClick()}
-                className={`block px-4 py-2 text-sm ${activePath === item.path ? 'text-gold font-medium' : 'text-gray-700 hover:bg-gray-100'}`}
+                className={`block px-4 py-2 text-sm ${activePath === item.path ? 'text-black font-medium' : 'text-gray-700 hover:bg-gray-100'}`}
               >
                 {item.label}
               </Link>
