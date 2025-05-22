@@ -61,7 +61,7 @@ const HomeSection = () => {
                 Rooted in my identity, heritage, and a deep commitment to service, I bring together law, education, and community advocacy to help shape systems built on partnership, accountability, and mutual respect.
               </p>
               <p className="content-text mb-8 text-white">
-                My approach to leadership is guided by deeply held values—empathy, integrity, and the enduring strength of community. In every space I engage, whether academic, or civic, I strive to uplift underrepresented voices and nurture leadership that serves and empowers.
+                My approach to leadership is guided by deeply held values: empathy, integrity, and the enduring strength of community. In every space I engage, whether academic, or civic, I strive to uplift underrepresented voices and nurture leadership that serves and empowers.
               </p>
             </RevealOnScroll>
           </div>
