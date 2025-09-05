@@ -89,7 +89,7 @@ const ContactSection = () => {
                   <p className="font-medium text-gray-800 mb-1">Email:</p>
                   <a 
                     href="mailto:wanjiruk@wanjirukareithi.com" 
-                    className="flex items-center text-pink hover:text-pink-dark transition-colors text-lg"
+                    className="flex items-center text-black hover:opacity-70 transition-colors text-lg"
                   >
                     <Mail size={18} className="mr-2" />
                     wanjiruk@wanjirukareithi.com
@@ -162,7 +162,7 @@ const ContactSection = () => {
                     <div>
                       <Button 
                         type="submit" 
-                        className="w-full bg-pink-dark hover:bg-pink text-white transition-colors"
+                        className="w-full bg-black hover:bg-gray-800 text-white transition-colors"
                         disabled={isSubmitting}
                       >
                         {isSubmitting ? 'Sending...' : 'Send Message'}

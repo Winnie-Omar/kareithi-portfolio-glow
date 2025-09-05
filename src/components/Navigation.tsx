@@ -40,7 +40,7 @@ const Navigation = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simple pin verification - in a real app, this would be more secure
+      // Simple pin verification - in a real app, this would be more secure
     if (cvPin === '1985') {
       // Create a link to download the CV
       const link = document.createElement('a');
@@ -71,6 +71,7 @@ const Navigation = () => {
     { id: 'about', path: '/about', label: 'About' },
     { id: 'research', path: '/research', label: 'Research & Publications' },
     { id: 'portfolio', path: '/portfolio', label: 'Advocacy Work' },
+    { id: 'blog', path: '/blog', label: 'Blog' },
     { id: 'contact', path: '/contact', label: 'Contact' },
     { id: 'cv', path: '#', label: 'CV', onClick: () => setShowCVDialog(true) },
   ];
