@@ -1,6 +1,7 @@
 
 import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import HomeSection from '@/components/HomeSection';
 import AboutSection from '@/components/AboutSection';
 import PortfolioSection from '@/components/PortfolioSection';
@@ -20,6 +21,7 @@ const Index = () => {
         <AboutSection />
         <PortfolioSection />
       </main>
+      <Footer />
       <WhatsAppBot />
     </div>
   );

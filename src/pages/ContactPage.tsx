@@ -1,6 +1,7 @@
 
 import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import ContactSection from '@/components/ContactSection';
 import WhatsAppBot from '@/components/WhatsAppBot';
 
@@ -15,6 +16,7 @@ const ContactPage = () => {
       <main className="pt-20">
         <ContactSection />
       </main>
+      <Footer />
       <WhatsAppBot />
     </div>
   );

@@ -47,6 +47,38 @@ export type Database = {
         }
         Relationships: []
       }
+      comments: {
+        Row: {
+          blog_id: string
+          comment: string
+          created_at: string
+          id: string
+          name: string
+        }
+        Insert: {
+          blog_id: string
+          comment: string
+          created_at?: string
+          id?: string
+          name: string
+        }
+        Update: {
+          blog_id?: string
+          comment?: string
+          created_at?: string
+          id?: string
+          name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "comments_blog_id_fkey"
+            columns: ["blog_id"]
+            isOneToOne: false
+            referencedRelation: "blogs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       contact_submissions: {
         Row: {
           created_at: string
