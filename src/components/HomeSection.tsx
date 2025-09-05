@@ -38,7 +38,7 @@ const HomeSection = () => {
           <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pl-12 text-left">
             <RevealOnScroll>
               <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tight leading-tight">
-                Dr. Wanjiru Kareithi
+                Dpr. Wanjiru Kareithi
               </h1>
             </RevealOnScroll>
             <RevealOnScroll delay={350}>
