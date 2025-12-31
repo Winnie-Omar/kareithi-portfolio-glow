@@ -10,9 +10,9 @@ import { MessageCircle, User, Calendar } from 'lucide-react';
 interface Comment {
   id: string;
   name: string;
-  comment: string;
+  content: string;
   created_at: string;
-  blog_id: string;
+  blog_post_id: string;
 }
 
 interface BlogCommentsProps {
@@ -25,7 +25,7 @@ const BlogComments = ({ blogId }: BlogCommentsProps) => {
   const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
-    comment: ''
+    content: ''
   });
   const { toast } = useToast();
 
@@ -38,7 +38,7 @@ const BlogComments = ({ blogId }: BlogCommentsProps) => {
       const { data, error } = await supabase
         .from('comments')
         .select('*')
-        .eq('blog_id', blogId)
+        .eq('blog_post_id', blogId)
         .order('created_at', { ascending: false });
 
       if (error) throw error;
@@ -52,7 +52,7 @@ const BlogComments = ({ blogId }: BlogCommentsProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name.trim() || !formData.comment.trim()) {
+    if (!formData.name.trim() || !formData.content.trim()) {
       toast({
         title: "Error",
         description: "Please fill in all fields.",
@@ -66,9 +66,9 @@ const BlogComments = ({ blogId }: BlogCommentsProps) => {
       const { error } = await supabase
         .from('comments')
         .insert([{
-          blog_id: blogId,
+          blog_post_id: blogId,
           name: formData.name.trim(),
-          comment: formData.comment.trim()
+          content: formData.content.trim()
         }]);
 
       if (error) throw error;
@@ -78,7 +78,7 @@ const BlogComments = ({ blogId }: BlogCommentsProps) => {
         description: "Your comment has been posted!",
       });
 
-      setFormData({ name: '', comment: '' });
+      setFormData({ name: '', content: '' });
       fetchComments();
     } catch (error) {
       console.error('Error posting comment:', error);
@@ -132,13 +132,13 @@ const BlogComments = ({ blogId }: BlogCommentsProps) => {
               />
             </div>
             <div>
-              <label htmlFor="comment" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-2">
                 Your Comment
               </label>
               <Textarea
-                id="comment"
-                value={formData.comment}
-                onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
+                id="content"
+                value={formData.content}
+                onChange={(e) => setFormData({ ...formData, content: e.target.value })}
                 placeholder="Share your thoughts..."
                 rows={4}
                 required
@@ -198,7 +198,7 @@ const BlogComments = ({ blogId }: BlogCommentsProps) => {
                   </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
-                  {comment.comment}
+                  {comment.content}
                 </p>
               </CardContent>
             </Card>

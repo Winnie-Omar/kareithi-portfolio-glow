@@ -11,7 +11,7 @@ import BlogComments from '@/components/BlogComments';
 interface Blog {
   id: string;
   title: string;
-  extract: string | null;
+  excerpt: string | null;
   content: string;
   image_url: string | null;
   published: boolean;
@@ -32,7 +32,7 @@ const BlogPage = () => {
   const fetchBlogs = async () => {
     try {
       const { data, error } = await supabase
-        .from('blogs')
+        .from('blog_posts')
         .select('*')
         .eq('published', true)
         .order('created_at', { ascending: false });
@@ -97,9 +97,9 @@ const BlogPage = () => {
                   </div>
                 </div>
                 
-                {selectedBlog.extract && (
+                {selectedBlog.excerpt && (
                   <p className="text-lg text-gray-700 font-medium leading-relaxed">
-                    {selectedBlog.extract}
+                    {selectedBlog.excerpt}
                   </p>
                 )}
               </header>
@@ -184,9 +184,9 @@ const BlogPage = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    {blog.extract && (
+                    {blog.excerpt && (
                       <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
-                        {blog.extract}
+                        {blog.excerpt}
                       </p>
                     )}
                   </CardContent>
