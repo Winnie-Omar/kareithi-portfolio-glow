@@ -10,102 +10,11 @@ export type Database = {
   // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "13.0.4"
+    PostgrestVersion: "14.1"
   }
   public: {
     Tables: {
-      blogs: {
-        Row: {
-          content: string
-          created_at: string
-          extract: string | null
-          id: string
-          image_url: string | null
-          published: boolean
-          title: string
-          updated_at: string
-        }
-        Insert: {
-          content: string
-          created_at?: string
-          extract?: string | null
-          id?: string
-          image_url?: string | null
-          published?: boolean
-          title: string
-          updated_at?: string
-        }
-        Update: {
-          content?: string
-          created_at?: string
-          extract?: string | null
-          id?: string
-          image_url?: string | null
-          published?: boolean
-          title?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      comments: {
-        Row: {
-          blog_id: string
-          comment: string
-          created_at: string
-          id: string
-          name: string
-        }
-        Insert: {
-          blog_id: string
-          comment: string
-          created_at?: string
-          id?: string
-          name: string
-        }
-        Update: {
-          blog_id?: string
-          comment?: string
-          created_at?: string
-          id?: string
-          name?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "comments_blog_id_fkey"
-            columns: ["blog_id"]
-            isOneToOne: false
-            referencedRelation: "blogs"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      contact_submissions: {
-        Row: {
-          created_at: string
-          email: string
-          id: string
-          message: string
-          name: string
-          subject: string
-        }
-        Insert: {
-          created_at?: string
-          email: string
-          id?: string
-          message: string
-          name: string
-          subject: string
-        }
-        Update: {
-          created_at?: string
-          email?: string
-          id?: string
-          message?: string
-          name?: string
-          subject?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
