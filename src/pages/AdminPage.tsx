@@ -14,7 +14,7 @@ import { Trash2, Edit, Eye, Mail, Calendar, User } from 'lucide-react';
 interface Blog {
   id: string;
   title: string;
-  extract: string | null;
+  excerpt: string | null;
   content: string;
   image_url: string | null;
   published: boolean;
@@ -41,7 +41,7 @@ const AdminPage = () => {
 
   const [formData, setFormData] = useState({
     title: '',
-    extract: '',
+    excerpt: '',
     content: '',
     image_url: '',
     published: false
@@ -55,7 +55,7 @@ const AdminPage = () => {
   const fetchBlogs = async () => {
     try {
       const { data, error } = await supabase
-        .from('blogs')
+        .from('blog_posts')
         .select('*')
         .order('created_at', { ascending: false });
 
@@ -83,7 +83,7 @@ const AdminPage = () => {
   const resetForm = () => {
     setFormData({
       title: '',
-      extract: '',
+      excerpt: '',
       content: '',
       image_url: '',
       published: false
@@ -95,7 +95,7 @@ const AdminPage = () => {
   const handleEdit = (blog: Blog) => {
     setFormData({
       title: blog.title,
-      extract: blog.extract || '',
+      excerpt: blog.excerpt || '',
       content: blog.content,
       image_url: blog.image_url || '',
       published: blog.published
@@ -116,10 +116,10 @@ const AdminPage = () => {
     try {
       if (editingBlog) {
         const { error } = await supabase
-          .from('blogs')
+          .from('blog_posts')
           .update({
             title: formData.title,
-            extract: formData.extract || null,
+            excerpt: formData.excerpt || null,
             content: formData.content,
             image_url: formData.image_url || null,
             published: formData.published
@@ -133,10 +133,10 @@ const AdminPage = () => {
         });
       } else {
         const { error } = await supabase
-          .from('blogs')
+          .from('blog_posts')
           .insert([{
             title: formData.title,
-            extract: formData.extract || null,
+            excerpt: formData.excerpt || null,
             content: formData.content,
             image_url: formData.image_url || null,
             published: formData.published
@@ -168,7 +168,7 @@ const AdminPage = () => {
 
     try {
       const { error } = await supabase
-        .from('blogs')
+        .from('blog_posts')
         .delete()
         .eq('id', blogId);
 
@@ -237,11 +237,11 @@ const AdminPage = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="extract">Extract (Optional)</Label>
+                      <Label htmlFor="excerpt">Excerpt (Optional)</Label>
                       <Textarea
-                        id="extract"
-                        value={formData.extract}
-                        onChange={(e) => setFormData({ ...formData, extract: e.target.value })}
+                        id="excerpt"
+                        value={formData.excerpt}
+                        onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
                         placeholder="Brief description or excerpt..."
                         rows={3}
                       />
@@ -324,7 +324,7 @@ const AdminPage = () => {
                       />
                     )}
                     <p className="text-sm text-gray-600 mb-4 line-clamp-3">
-                      {blog.extract}
+                      {blog.excerpt}
                     </p>
                     <div className="flex justify-between items-center text-xs text-gray-500">
                       <span>{formatDate(blog.created_at)}</span>
